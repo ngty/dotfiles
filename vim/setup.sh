@@ -15,7 +15,7 @@ git submodule init && git submodule update
 # Install extra plugins
 cd $REPO_DIR
 for url in `cat ${BASE_DIR}/extra_plugins`; do
-  name=`echo $f | sed -e 's|.*/\(.*\).git|\1|'`
+  name=`echo $url | sed -e 's|.*/\(.*\).git|\1|'`
   git clone $url bundle/${name}
 done
 
