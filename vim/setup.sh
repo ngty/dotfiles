@@ -1,8 +1,8 @@
 #!/bin/bash
 
-VIM_DIR=`dirname $0`
-VIM_DIR=`cd $VIM_DIR && pwd`
-REPO_DIR=${VIM_DIR}/vimfiles
+BASE_DIR=`dirname $0`
+BASE_DIR=`cd $BASE_DIR && pwd`
+REPO_DIR=${BASE_DIR}/vimfiles
 
 # Install system dependencies
 sudo pacman -S --needed ctags vim
@@ -14,16 +14,17 @@ git submodule init && git submodule update
 
 # Install extra plugins
 cd $REPO_DIR
-git clone https://github.com/kana/vim-textobj-user.git bundle/vim-textobj-user
-git clone https://github.com/nelstrom/vim-textobj-rubyblock.git bundle/vim-textobj-rubyblock
-git clone https://github.com/kana/vim-vspec.git bundle/vim-vspec
+for url in `cat ${BASE_DIR}/extra_plugins`; do
+  name=`echo $f | sed -e 's|.*/\(.*\).git|\1|'`
+  git clone $url bundle/${name}
+done
 
 # Remove not required plugins
 cd $REPO_DIR
 mv bundle/gundo bundle/.gundo
 
 # Symlinking to vim path
-rm ~/.vimrc && ln -s ${VIM_DIR}/vimrc ~/.vimrc
-rm ~/.vim && ln -s ${VIM_DIR}/vimfiles ~/.vim
+rm ~/.vimrc && ln -s ${BASE_DIR}/vimrc ~/.vimrc
+rm ~/.vim && ln -s ${BASE_DIR}/vimfiles ~/.vim
 
 # __END__
