@@ -22,7 +22,7 @@ done
 
 # Remove not required plugins
 cd $REPO_DIR
-mv bundle/gundo bundle/.gundo
+mv bundle/gundo bundle/.gundo.disabled
 
 # Symlinking to vim path
 rm ~/.vimrc && ln -s ${BASE_DIR}/vimrc ~/.vimrc
