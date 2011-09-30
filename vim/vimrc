@@ -1,0 +1,21 @@
+source ~/.vim/vimrc
+
+colorscheme vividchalk
+set background=dark
+
+set encoding=utf-8
+set fileencoding=utf-8
+set sts=2
+set ts=2
+set sw=2
+set wrap
+set nu
+set mouse-=a
+set viminfo='20,\"1000 "
+set autoindent
+set backspace=indent,eol,start
+set expandtab
+set history=50
+set hlsearch
+set incsearch
+set nowrap
