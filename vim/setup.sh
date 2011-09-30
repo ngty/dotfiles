@@ -1,14 +1,15 @@
 #!/bin/bash
 
+REPO_URL=https://github.com/scrooloose/vimfiles.git
 BASE_DIR=`dirname $0`
 BASE_DIR=`cd $BASE_DIR && pwd`
-REPO_DIR=${BASE_DIR}/vimfiles
+REPO_DIR=${BASE_DIR}/`echo $REPO_URL | sed -e 's|.*/\(.*\).git|\1|'`
 
 # Install system dependencies
 sudo pacman -S --needed ctags vim
 
 # Clone vimfiles repo & update submodules
-[ -d $REPO_DIR ] || git clone https://github.com/scrooloose/vimfiles.git
+[ -d $REPO_DIR ] || git clone $REPO_URL
 cd $REPO_DIR
 git submodule init && git submodule update
 
