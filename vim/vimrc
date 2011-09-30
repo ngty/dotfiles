@@ -19,3 +19,5 @@ set history=50
 set hlsearch
 set incsearch
 set nowrap
+
+nnoremap <C-B> :BufExplorer<cr>
