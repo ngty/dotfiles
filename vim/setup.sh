@@ -6,7 +6,8 @@ BASE_DIR=`cd $BASE_DIR && pwd`
 REPO_DIR=${BASE_DIR}/`echo $REPO_URL | sed -e 's|.*/\(.*\).git|\1|'`
 
 # Install system dependencies
-sudo pacman -S --needed ctags vim
+source ${BASE_DIR}/../helpers
+source ${BASE_DIR}/platforms/$(platform)
 
 # Clone vimfiles repo & update submodules
 [ -d $REPO_DIR ] || git clone $REPO_URL

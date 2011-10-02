@@ -1,0 +1,7 @@
+platform() {
+  if [ -n "`uname -a | grep -i arch`" ]; then
+    echo 'archlinux'
+  else
+    echo 'wtf'
+  fi
+}
