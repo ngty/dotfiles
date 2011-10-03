@@ -1,5 +1,7 @@
 platform() {
-  if [ -n "`uname -a | grep -i arch`" ]; then
+  if [ -n "`uname -a | grep -i ubuntu`" ]; then
+    echo 'ubuntu'
+  elif [ -n "`uname -a | grep -i arch`" ]; then
     echo 'archlinux'
   else
     echo 'wtf'
