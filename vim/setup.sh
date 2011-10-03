@@ -46,7 +46,7 @@ done
 cd $REPO_DIR
 for plugin in `cat ${BASE_DIR}/disabled_plugins`; do
   [ -d bundle/${plugin} ] && \
-    mv bundle/${plugin} bundle/${plugin}.disabled
+    mv bundle/${plugin} bundle/.${plugin}.disabled
 done
 
 # //////////////////////////////////////////////////////////////////
