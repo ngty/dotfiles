@@ -52,7 +52,9 @@ done
 # //////////////////////////////////////////////////////////////////
 # Symlink to vim path
 # //////////////////////////////////////////////////////////////////
-rm ~/.vimrc && ln -s ${BASE_DIR}/vimrc ~/.vimrc
-rm ~/.vim && ln -s ${BASE_DIR}/vimfiles ~/.vim
+[ -f ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.0
+[ -f ~/.vim ] && mv ~/.vim ~/.vim.0
+ln -s ${BASE_DIR}/vimrc ~/.vimrc
+ln -s ${BASE_DIR}/vimfiles ~/.vim
 
 # __END__
