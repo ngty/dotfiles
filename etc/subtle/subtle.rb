@@ -415,9 +415,6 @@ grab "W-KP_3", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 #grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
 #grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
-# Exec programs
-grab "W-Return", "urxvt"
-
 # Run Ruby lambdas
 grab "S-F2" do |c|
   puts c.name
@@ -426,6 +423,12 @@ end
 grab "S-F3" do
   puts Subtlext::VERSION
 end
+
+# Launch programs
+grab "W-s", "urxvt"
+grab "W-x", "dmenu_run -nb '#333333' -nf white -sb '#666666' -sf orange -f -b -l 10 -fn 'monaco-15'"
+grab "W-f", "firefox -P default -no-remote"
+grab "W-c", "chromium"
 
 #
 # == Tags
