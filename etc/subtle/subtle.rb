@@ -148,7 +148,7 @@ end
 
 # Style for sublets
 style :sublets do
-  foreground  "#757575"
+  foreground  "#cccccc"
 end
 
 # Style for separator
