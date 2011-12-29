@@ -584,7 +584,7 @@ grab "W-c", "chromium"
 
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt"
-tag "browser", "uzbl|opera|firefox|navigator"
+tag "browser", "uzbl|opera|firefox|chromium|navigator"
 
 # Placement
 tag "editor" do
