@@ -1,0 +1,18 @@
+# ===================================================
+# URxvt Specific
+# ===================================================
+URxvt.scrollBar:   false
+URxvt.font:        xft:monaco-11:dpi=96
+URxvt.foreground:  #ffffff
+URxvt.background:  #000000
+
+# ===================================================
+# Fonts Specific
+# ===================================================
+Xft.dpi:           96
+Xft.antialias:     true 
+Xft.rgba:          rgb
+Xft.hinting:       true
+Xft.hintstyle:     hintslight
+
+# __END__
