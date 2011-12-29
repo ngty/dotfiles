@@ -346,43 +346,43 @@ grab "W-A-3", :ScreenJump3
 grab "W-A-4", :ScreenJump4
 
 # Force reload of config and sublets
-grab "W-C-r", :SubtleReload
+grab "W-S-r", :SubtleReload
 
 # Force restart of subtle
-grab "W-C-S-r", :SubtleRestart
+#grab "W-S-r-t", :SubtleRestart
 
 # Quit subtle
-grab "W-C-q", :SubtleQuit
+grab "W-S-q", :SubtleQuit
 
 # Move current window
-grab "W-B1", :WindowMove
+grab "W-S-B1", :WindowMove
 
 # Resize current window
-grab "W-B3", :WindowResize
+grab "W-S-B3", :WindowResize
 
 # Toggle floating mode of window
-grab "W-f", :WindowFloat
+grab "W-S-f", :WindowFloat
 
 # Toggle fullscreen mode of window
-grab "W-space", :WindowFull
+grab "W-S-space", :WindowFull
 
 # Toggle sticky mode of window (will be visible on all views)
-grab "W-s", :WindowStick
+grab "W-S-s", :WindowStick
 
 # Toggle zaphod mode of window (will span across all screens)
-grab "W-equal", :WindowZaphod
+grab "W-S-equal", :WindowZaphod
 
 # Raise window
-grab "W-r", :WindowRaise
+grab "W-S-r", :WindowRaise
 
 # Lower window
-grab "W-l", :WindowLower
+grab "W-S-l", :WindowLower
 
 # Select next windows
-grab "W-Left",  :WindowLeft
-grab "W-Down",  :WindowDown
-grab "W-Up",    :WindowUp
-grab "W-Right", :WindowRight
+grab "W-S-Left",  :WindowLeft
+grab "W-S-Down",  :WindowDown
+grab "W-S-Up",    :WindowUp
+grab "W-S-Right", :WindowRight
 
 # Kill current window
 grab "W-S-k", :WindowKill
