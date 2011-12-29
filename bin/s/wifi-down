@@ -1,9 +1,10 @@
 #!/bin/bash
 
-DEV=wlan0
+DIR=`dirname $0`/../../etc/network
+source $DIR/devices
 
-sudo dhcpcd -k $DEV
-sudo ifconfig $DEV down
+sudo dhcpcd -k $WIFI
+sudo ifconfig $WIFI down
 sudo wpa_cli terminate
 sudo wpa_cli quit
 sudo rfkill block wifi
