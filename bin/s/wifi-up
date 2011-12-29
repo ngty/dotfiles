@@ -1,0 +1,25 @@
+#!/bin/bash
+
+DEV=wlan0
+DIR=`dirname $0`/../../etc/network/wpa
+CONF=/tmp/`whoami`/wifi.conf
+
+sudo rfkill unblock wifi
+sudo ifconfig wlan0 up
+
+if [[ -n "$1" ]]; then
+  CONF=${DIR}/${1}
+else
+  [[ -d `dirname $CONF` ]] || mkdir `dirname $CONF`
+
+  echo "ctrl_interface=/var/run/wpa_supplicant" > $CONF
+  echo "update_config=1"                       >> $CONF
+  echo ""                                      >> $CONF
+  cat $DIR/*                                   >> $CONF
+fi
+
+sudo wpa_supplicant -i $DEV -c $CONF -B
+sudo wpa_cli -B
+sudo dhcpcd -d $DEV
+
+# __END__

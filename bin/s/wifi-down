@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DEV=wlan0
+
+sudo dhcpcd -k $DEV
+sudo ifconfig $DEV down
+sudo wpa_cli terminate
+sudo wpa_cli quit
+sudo rfkill block wifi
+
+# __END__
