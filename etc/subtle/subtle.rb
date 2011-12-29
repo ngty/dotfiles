@@ -163,8 +163,8 @@ end
 
 # Style for active/inactive windows
 style :clients do
-  active      "#303030", 2
-  inactive    "#202020", 2
+  active      "#303030", 0
+  inactive    "#202020", 0
   margin      0
   width       50
 end
