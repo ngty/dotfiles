@@ -38,8 +38,8 @@ set :resize, false
 set :tiling, false
 
 # Font string either take from e.g. xfontsel or use xft
-set :font, "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
-#set :font, "xft:sans-8"
+#set :font, "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
+set :font, "xft:monaco-15"
 
 # Separator between sublets
 set :separator, "|"
