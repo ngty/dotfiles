@@ -21,4 +21,3 @@ set incsearch
 set nowrap
 
 nnoremap <C-B> :BufExplorer<cr>
-cabbrev ls :BufExplorer
