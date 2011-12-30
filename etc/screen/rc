@@ -1,0 +1,6 @@
+startup_message off
+vbell off
+defscrollback 5000
+backtick 1 60 60 $HOME/etc/screen/scripts/acpi
+hardstatus alwayslastline
+hardstatus string "%{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %{W}%c %d/%M/%y %D (%1`) %{g}]"
