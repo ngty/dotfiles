@@ -5,7 +5,8 @@ alias sudo="sudo -E " # pass env variables to root
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[[ -f `dirname $0`/exports ]] && source `dirname $0`/exports
-[[ -f `dirname $0`/aliases ]] && source `dirname $0`/aliases
+# Keep things organized
+source $HOME/etc/bash/exports
+source $HOME/etc/bash/aliases
 
 # __END__
