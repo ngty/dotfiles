@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Disables the irritating beep
+xset b off
+
 # Sudo tweaks, see https://wiki.archlinux.org/index.php/Sudo
 complete -cf sudo     # enable sudo tab completion
 alias sudo="sudo -E " # pass env variables to root
