@@ -355,10 +355,10 @@ grab "W-S-r", :SubtleReload
 grab "W-S-q", :SubtleQuit
 
 # Move current window
-grab "W-S-B1", :WindowMove
+#grab "W-S-B1", :WindowMove
 
 # Resize current window
-grab "W-S-B3", :WindowResize
+#grab "W-S-B3", :WindowResize
 
 # Toggle floating mode of window
 grab "W-S-f", :WindowFloat
