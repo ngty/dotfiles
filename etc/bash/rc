@@ -1,9 +1,13 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Sudo tweaks, see https://wiki.archlinux.org/index.php/Sudo
 complete -cf sudo     # enable sudo tab completion
 alias sudo="sudo -E " # pass env variables to root
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# Load RVM as a function
+[[ -s $HOME/.rvm/scripts/rvm ]] && \
+  source $HOME/.rvm/scripts/rvm
 
 # Keep things organized
 source $HOME/etc/bash/exports
