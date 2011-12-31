@@ -784,4 +784,12 @@ view "4", "editor"
 # http://subforge.org/projects/subtle/wiki/Hooks
 #
 
+on :start do
+  system "$HOME/bin/apply-wallpaper"
+end
+
+on :reload do
+  system "$HOME/bin/apply-wallpaper"
+end
+
 # vim:ts=2:bs=2:sw=2:et:fdm=marker
