@@ -72,10 +72,10 @@
 #
 
 # Jump to view1, view2, ...
-grab "W-S-1", :ViewJump1
-grab "W-S-2", :ViewJump2
-grab "W-S-3", :ViewJump3
-grab "W-S-4", :ViewJump4
+#grab "W-S-1", :ViewJump1
+#grab "W-S-2", :ViewJump2
+#grab "W-S-3", :ViewJump3
+#grab "W-S-4", :ViewJump4
 
 # Switch current view
 grab "W-1", :ViewSwitch1
@@ -88,16 +88,16 @@ grab "W-S-bracketleft", :ViewPrev
 grab "W-S-bracketright", :ViewNext
 
 # Move mouse to screen1, screen2, ...
-grab "W-A-1", :ScreenJump1
-grab "W-A-2", :ScreenJump2
-grab "W-A-3", :ScreenJump3
-grab "W-A-4", :ScreenJump4
+#grab "W-A-1", :ScreenJump1
+#grab "W-A-2", :ScreenJump2
+#grab "W-A-3", :ScreenJump3
+#grab "W-A-4", :ScreenJump4
 
 # Force reload of config and sublets
 grab "W-S-r", :SubtleReload
 
 # Force restart of subtle
-#grab "W-S-r-t", :SubtleRestart
+grab "W-S-r-t", :SubtleRestart
 
 # Quit subtle
 grab "W-S-q", :SubtleQuit
@@ -109,42 +109,42 @@ grab "W-S-q", :SubtleQuit
 #grab "W-S-B3", :WindowResize
 
 # Toggle floating mode of window
-grab "W-S-f", :WindowFloat
+#grab "W-S-f", :WindowFloat
 
 # Toggle fullscreen mode of window
 grab "W-S-space", :WindowFull
 
 # Toggle sticky mode of window (will be visible on all views)
-grab "W-S-s", :WindowStick
+#grab "W-S-s", :WindowStick
 
 # Toggle zaphod mode of window (will span across all screens)
-grab "W-S-equal", :WindowZaphod
+#grab "W-S-equal", :WindowZaphod
 
 # Raise window
-grab "W-S-r", :WindowRaise
+#grab "W-S-r", :WindowRaise
 
 # Lower window
 grab "W-S-l", :WindowLower
 
 # Select next windows
-grab "W-S-Left",  :WindowLeft
-grab "W-S-Down",  :WindowDown
-grab "W-S-Up",    :WindowUp
-grab "W-S-Right", :WindowRight
+#grab "W-S-Left",  :WindowLeft
+#grab "W-S-Down",  :WindowDown
+#grab "W-S-Up",    :WindowUp
+#grab "W-S-Right", :WindowRight
 
 # Kill current window
 grab "W-S-k", :WindowKill
 
 # Cycle between given gravities
-grab "W-KP_7", [ :top_left,     :top_left66,     :top_left33     ]
-grab "W-KP_8", [ :top,          :top66,          :top33          ]
-grab "W-KP_9", [ :top_right,    :top_right66,    :top_right33    ]
-grab "W-KP_4", [ :left,         :left66,         :left33         ]
-grab "W-KP_5", [ :center,       :center66,       :center33       ]
-grab "W-KP_6", [ :right,        :right66,        :right33        ]
-grab "W-KP_1", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
-grab "W-KP_2", [ :bottom,       :bottom66,       :bottom33       ]
-grab "W-KP_3", [ :bottom_right, :bottom_right66, :bottom_right33 ]
+#grab "W-KP_7", [ :top_left,     :top_left66,     :top_left33     ]
+#grab "W-KP_8", [ :top,          :top66,          :top33          ]
+#grab "W-KP_9", [ :top_right,    :top_right66,    :top_right33    ]
+#grab "W-KP_4", [ :left,         :left66,         :left33         ]
+#grab "W-KP_5", [ :center,       :center66,       :center33       ]
+#grab "W-KP_6", [ :right,        :right66,        :right33        ]
+#grab "W-KP_1", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
+#grab "W-KP_2", [ :bottom,       :bottom66,       :bottom33       ]
+#grab "W-KP_3", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # In case no numpad is available e.g. on notebooks
 #grab "W-q", [ :top_left,     :top_left66,     :top_left33     ]
@@ -164,13 +164,13 @@ grab "W-KP_3", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 #grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 
 # Run Ruby lambdas
-grab "S-F2" do |c|
-  puts c.name
-end
-
-grab "S-F3" do
-  puts Subtlext::VERSION
-end
+#grab "S-F2" do |c|
+#  puts c.name
+#end
+#
+#grab "S-F3" do
+#  puts Subtlext::VERSION
+#end
 
 # Launch programs
 grab "W-s", "urxvt"
