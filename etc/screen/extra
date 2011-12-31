@@ -6,7 +6,7 @@ startup_message off
 vbell off
 defscrollback 5000
 
-backtick 1 60 60 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*" | awk -F "." "{print \$3}"'
+backtick 1 60 60 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*" | awk -F "." "{print \$2}"'
 backtick 2 60 60 sh -c 'acpi | awk -F ", " "{print \$2}"'
 
 caption always "%{b Wk}[%1`]%{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %{W}%c %d/%M/%y %D (%1`) %{g}]"
