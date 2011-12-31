@@ -39,7 +39,7 @@ set :tiling, false
 
 # Font string either take from e.g. xfontsel or use xft
 #set :font, "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
-set :font, "xft:monaco-15"
+set :font, "xft:monaco-9"
 
 # Separator between sublets
 set :separator, "|"
