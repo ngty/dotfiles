@@ -44,7 +44,7 @@
 #
 
 screen 1 do
-  top    [ :views, :title, :spacer, :keychain, :spacer, :tray, :sublets ]
+  top    [ :views, :spacer, :title, :spacer, :separator, :sublets, :separator ]
   bottom [ ]
 end
 
