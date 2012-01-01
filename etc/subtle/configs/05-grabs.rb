@@ -94,13 +94,13 @@ grab "W-bracketright", :ViewNext
 #grab "W-A-4", :ScreenJump4
 
 # Force reload of config and sublets
-grab "W-S-r", :SubtleReload
+#grab "W-S-C-Return", :SubtleReload
 
 # Force restart of subtle
-grab "W-S-r-t", :SubtleRestart
+#grab "W-S-C-Return", :SubtleRestart
 
 # Quit subtle
-grab "W-S-q", :SubtleQuit
+grab "W-S-C-BackSpace", :SubtleQuit
 
 # Move current window
 #grab "W-S-B1", :WindowMove
