@@ -44,4 +44,8 @@
 # http://subforge.org/projects/subtle/wiki/Sublets
 #
 
+sublet :clock do
+  format_string "%d/%b/%y %H:%M"
+end
+
 # vim:ts=2:bs=2:sw=2:et:fdm=marker
