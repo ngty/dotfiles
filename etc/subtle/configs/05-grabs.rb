@@ -124,7 +124,7 @@ grab "W-space", :WindowFull
 #grab "W-S-r", :WindowRaise
 
 # Lower window
-grab "W-S-l", :WindowLower
+grab "W-Tab", :WindowLower
 
 # Select next windows
 #grab "W-S-Left",  :WindowLeft
