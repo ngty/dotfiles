@@ -133,7 +133,7 @@ grab "W-Tab", :WindowLower
 #grab "W-S-Right", :WindowRight
 
 # Kill current window
-grab "W-S-k", :WindowKill
+grab "W-period", :WindowKill
 
 # Cycle between given gravities
 #grab "W-KP_7", [ :top_left,     :top_left66,     :top_left33     ]
