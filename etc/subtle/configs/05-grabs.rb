@@ -112,7 +112,7 @@ grab "W-S-C-BackSpace", :SubtleQuit
 #grab "W-S-f", :WindowFloat
 
 # Toggle fullscreen mode of window
-grab "W-S-space", :WindowFull
+grab "W-space", :WindowFull
 
 # Toggle sticky mode of window (will be visible on all views)
 #grab "W-S-s", :WindowStick
