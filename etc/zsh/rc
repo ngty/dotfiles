@@ -1,0 +1,32 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/ty/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# See http://stackoverflow.com/questions/689765/how-can-i-change-the-color-of-my-prompt-in-zsh-different-from-normal-text
+autoload -U colors && colors
+
+# Disables the irritating beep
+xset b off
+
+# Sudo tweaks, see https://wiki.archlinux.org/index.php/Sudo
+alias sudo="sudo -E " # pass env variables to root
+
+# Load RVM as a function
+[[ -s $HOME/.rvm/scripts/rvm ]] && \
+  source $HOME/.rvm/scripts/rvm
+
+# Keep things organized
+source $HOME/etc/zsh/prompt
+source $HOME/etc/zsh/exports
+source $HOME/etc/zsh/aliases
+
+# __END__

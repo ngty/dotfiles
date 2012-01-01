@@ -1,0 +1,8 @@
+[[ -f ~/.zshrc ]] && . ~/.zshrc
+
+# See https://wiki.archlinux.org/index.php/Start_X_at_Boot#.7E.2F.bash_profile
+if [[ -z "$DISPLAY" ]] && [[ ! -a "/tmp/.X11-unix/X0" ]]; then
+  xinit
+  logout
+fi
+
