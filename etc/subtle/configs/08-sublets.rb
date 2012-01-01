@@ -48,4 +48,15 @@ sublet :clock do
   format_string "%d/%b/%y %H:%M"
 end
 
+sublet :battery do
+  color_icon true
+  color_text true
+
+  colors \
+     25 => '#FF00FF', # pink
+     50 => '#FFFF00', # yellow
+     75 => '#00FFFF', # cyan
+    100 => '#00FF00'  # green
+end
+
 # vim:ts=2:bs=2:sw=2:et:fdm=marker
