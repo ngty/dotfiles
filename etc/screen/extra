@@ -10,6 +10,6 @@ defscrollback 5000
 backtick 1 60 60 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*" | awk -F "." "{print \$2}"'
 backtick 2 60 60 sh -c 'acpi | awk -F ", " "{print \$2}"'
 
-caption always "%{= kw} %-w%{= BW}(%n %t)%{-}%+w %-= %{b yk}%c %d/%M/%y %D (%2`) %{-} %{b Wk} %1` "
+caption always "%{= kw} %-w%{= BW}(%n %t)%{-}%+w %-= %{b ky}[%c %d/%M/%y %D (%2`)]%{b kW}[%1`]"
 
 # __END__

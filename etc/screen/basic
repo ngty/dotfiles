@@ -8,6 +8,6 @@ vbell off
 defscrollback 5000
 backtick 1 60 60 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*" | awk -F "." "{print \$2}"'
 
-caption always "%{= kw} %-w%{= BW}(%n %t)%{-}%+w %-= %{b Wk} %1` "
+caption always "%{= kw} %-w%{= BW}(%n %t)%{-}%+w %-= %{b kW}[%1`]"
 
 # __END__
