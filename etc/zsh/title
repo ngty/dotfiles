@@ -1,0 +1,10 @@
+function precmd() {
+  case "$TERM" in
+    screen|screen.rxvt)
+      # TODO: show the last executed command in the title as well
+
+      session=`echo $STY | sed 's/[^.]\+\.//' | sed 's/\.[^.]\+$//'`
+      print -Pn "\e]2;[${session}] %n@%M: %~\a" # must (re)set xterm title
+      ;;
+    esac
+}
