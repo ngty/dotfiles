@@ -6,4 +6,9 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -d -x -r -n subtle
 
+# Sync PRIMARY (mouse select & shift insert) & CLIPBOARD (Ctrl-c & Ctrl-v)
+# see http://mutelight.org/articles/subtleties-of-the-x-clipboard
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
 exec ck-launch-session dbus-launch subtle
