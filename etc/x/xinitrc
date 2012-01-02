@@ -11,4 +11,5 @@ ibus-daemon -d -x -r -n subtle
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
+# Launch wm to support mounting external storage
 exec ck-launch-session dbus-launch subtle
