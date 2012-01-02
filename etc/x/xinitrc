@@ -1,1 +1,9 @@
-exec subtle
+# IBus support, see:
+# * https://wiki.archlinux.org/index.php/IBus
+# * http://forums-web2.gentoo.org/viewtopic-p-6312356.html?sid=5ae09f9bb4f114459e2b51071c67867d
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -d -x -r -n subtle
+
+exec ck-launch-session dbus-launch subtle
