@@ -12,4 +12,10 @@ backtick 2 60 60 sh -c 'acpi | awk -F ", " "{print \$2}"'
 
 caption always "%{= kw} %-w%{= BW}(%n %t)%{-}%+w %-= %{b ky}[%c %d/%M/%y %D (%2`)]%{b kW}[%1`]"
 
+screen -t '#' 0
+screen -t '#' 1
+screen -t '#' 2
+screen -t '#' 3
+select 0
+
 # __END__

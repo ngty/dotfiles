@@ -10,4 +10,10 @@ backtick 1 60 60 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*" | a
 
 caption always "%{= kw} %-w%{= BW}(%n %t)%{-}%+w %-= %{b kW}[%1`]"
 
+screen -t '#' 0
+screen -t '#' 1
+screen -t '#' 2
+screen -t '#' 3
+select 0
+
 # __END__
