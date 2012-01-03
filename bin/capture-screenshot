@@ -1,0 +1,8 @@
+#!/bin/bash
+DIR=/tmp/ty/
+IMG=${DIR}/screenshot-`ls ${DIR}/screenshot-*.png | wc -l`.png
+
+import "${@}" $IMG
+feh $IMG
+
+# __END__

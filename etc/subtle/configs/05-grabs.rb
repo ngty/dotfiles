@@ -177,5 +177,7 @@ grab "W-s", "urxvt"
 grab "W-x", "dmenu_run -nb '#333333' -nf white -sb '#666666' -sf orange -f -b -l 10 -fn 'monaco-15'"
 grab "W-f", "firefox -P default -no-remote"
 grab "W-g", "firefox -P accountable -no-remote"
+grab "W-S-Print", '~/bin/capture-screenshot -window root'
+grab "W-Print", '~/bin/capture-screenshot'
 
 # vim:ts=2:bs=2:sw=2:et:fdm=marker
