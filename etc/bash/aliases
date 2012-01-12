@@ -16,3 +16,12 @@ alias gsh='git stash'
 alias gdf='git diff'
 alias gph='git push'
 alias gui='gitg'
+
+# Sudo specific
+alias s-up-wifi=$HOME/bin/s/turn-on-wifi
+alias s-down-wifi=$HOME/bin/s/turn-off-wifi
+alias s-fix-wifi='s-down-wifi; s-up-wifi'
+alias s-pacman='sudo pacman'
+alias s-rc.d='sudo rc.d'
+
+# __END__
