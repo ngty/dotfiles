@@ -15,7 +15,7 @@ compinit
 autoload -U colors && colors
 
 # Disables the irritating beep
-xset b off
+(( $+commands[xset] )) && xset b off
 
 # Sudo tweaks, see https://wiki.archlinux.org/index.php/Sudo
 alias sudo="sudo -E " # pass env variables to root
