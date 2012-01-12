@@ -1,0 +1,8 @@
+create_symlink() {
+  local src=$1
+  local dest=$2
+
+  echo -n "* creating symlink: $dest ~> $src ... "
+  rm -f $dest ; ln -s $src $dest
+  echo "done"
+}
