@@ -151,8 +151,10 @@
 #
 
 # Simple tags
-tag "terms",   "xterm|[u]?rxvt"
-tag "browser", "uzbl|opera|firefox|chromium|navigator"
+tag "terms",     "xterm|[u]?rxvt"
+tag "browser",   "midori|firefox|chromium"
+tag "filer",     "pcmanfm|rox"
+tag "machines",  "virtualbox"
 
 # Placement
 tag "editor" do

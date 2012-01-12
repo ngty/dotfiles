@@ -61,7 +61,7 @@
 
 view "1", "terms|default"
 view "2", "browser"
-view "3", "gimp_.*"
-view "4", "editor"
+view "3", "filer"
+view "4", "machines"
 
 # vim:ts=2:bs=2:sw=2:et:fdm=marker
