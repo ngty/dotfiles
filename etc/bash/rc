@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # Disables the irritating beep
-xset b off
+[[ -n "`command -v xset`" ]] && xset b off
 
 # Sudo tweaks, see https://wiki.archlinux.org/index.php/Sudo
 complete -cf sudo     # enable sudo tab completion
