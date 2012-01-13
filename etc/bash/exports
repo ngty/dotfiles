@@ -1,6 +1,9 @@
 export PATH=${HOME}/bin:${PATH}
 export EDITOR=vim
 
+# Fixed complaint abt "unknown terminal"
+[[ -n "$SSH_CONNECTION" ]] && export TERM=screen-256color
+
 # Better prompt (http://techdebug.com/blog/2009/11/28/git-branch-name-in-your-bash-prompt)
 CURRENT_GIT_BRANCH() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' ; }
 PS1="\033[01;32m\](\u@\h)\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(CURRENT_GIT_BRANCH)"
