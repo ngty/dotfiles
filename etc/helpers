@@ -11,7 +11,7 @@ machine_os() {
   if [ -n "`uname -a | grep -i ubuntu`" ]; then
     echo 'ubuntu'
   elif [ -n "`uname -a | grep -i arch`" ]; then
-    echo 'arch'
+    echo 'archlinux'
   else
     echo 'wtf'
   fi
