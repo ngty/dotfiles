@@ -6,3 +6,13 @@ create_symlink() {
   rm -f $dest ; ln -s $src $dest
   echo "done"
 }
+
+machine_os() {
+  if [ -n "`uname -a | grep -i ubuntu`" ]; then
+    echo 'ubuntu'
+  elif [ -n "`uname -a | grep -i arch`" ]; then
+    echo 'arch'
+  else
+    echo 'wtf'
+  fi
+}
