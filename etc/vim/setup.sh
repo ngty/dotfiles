@@ -9,7 +9,7 @@ REPO_DIR=${BASE_DIR}/`echo $REPO_URL | sed -e 's|.*/\(.*\).git|\1|'`
 # Install system dependencies
 # //////////////////////////////////////////////////////////////////
 source ${BASE_DIR}/../helpers
-source ${BASE_DIR}/platforms/$(machine_os)
+source ${BASE_DIR}/os/$(machine_os)
 
 # //////////////////////////////////////////////////////////////////
 # Clone vimfiles repo & update submodules
