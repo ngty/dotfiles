@@ -2,7 +2,6 @@ source ~/.vim/vimrc
 
 colorscheme vividchalk
 set background=dark
-
 set encoding=utf-8
 set fileencoding=utf-8
 set sts=2
@@ -19,5 +18,8 @@ set history=50
 set hlsearch
 set incsearch
 set nowrap
+
+" See http://blog.oldworld.fr/index.php?post/2010/03/21/256-colors-terminal-with-tmux-and-urxvt
+set t_Co=256
 
 nnoremap <C-B> :BufExplorer<cr>
