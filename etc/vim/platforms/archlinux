@@ -1,1 +1,9 @@
+# Ensure the system's locale support the desired encoding
+# (see https://wiki.archlinux.org/index.php/Locale#My_terminal_doesn.27t_support_UTF-8)
+sudo sh -c "sed -i /etc/rc.conf -e 's|^\(LOCALE\)=.*$|\1=\"en_US.UTF-8\"|'"
+sudo sh -c "sed -i /etc/locale.gen -e 's|^#\(en_US.UTF-8 UTF-8\)|\1|'"
+sudo sh -c "sed -i /etc/locale.gen -e 's|^#\(en_US ISO-8859-1\)|\1|'"
+sudo locale-gen
+
+# Install packages
 sudo pacman -S --needed ctags vim
