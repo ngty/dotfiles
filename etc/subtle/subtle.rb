@@ -12,7 +12,7 @@
 # +XDG_CONFIG_HOME+.
 #
 
-Dir[File.expand_path('../configs/*.rb', __FILE__)].sort.each do |config|
+Dir[File.expand_path('../config/*.rb', __FILE__)].sort.each do |config|
   instance_eval(File.read(config))
 end
 
