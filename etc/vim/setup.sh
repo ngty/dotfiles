@@ -9,12 +9,12 @@ REPO_DIR=${BASE_DIR}/`echo $REPO_URL | sed -e 's|.*/\(.*\).git|\1|'`
 # Install system dependencies
 # //////////////////////////////////////////////////////////////////
 source ${BASE_DIR}/../helpers
-source ${BASE_DIR}/platforms/$(platform)
+source ${BASE_DIR}/platforms/$(machine_os)
 
 # //////////////////////////////////////////////////////////////////
 # Clone vimfiles repo & update submodules
 # //////////////////////////////////////////////////////////////////
-echo -n ">> Initializing base config from $REPO_URL ... "
+echo -n "* initializing base config from $REPO_URL ... "
 
 if [[ -d $REPO_DIR ]]; then
   echo "skipped"
@@ -29,7 +29,7 @@ fi
 # //////////////////////////////////////////////////////////////////
 cd $REPO_DIR
 for url in `cat ${BASE_DIR}/extra_plugins`; do
-  echo -n ">> Cloning extra plugin $url ... "
+  echo -n "* cloning extra plugin $url ... "
   name=`echo $url | sed -e 's|.*/\(.*\).git|\1|'`
 
   if [ -d bundle/${name} ]; then
@@ -52,9 +52,7 @@ done
 # //////////////////////////////////////////////////////////////////
 # Symlink to vim path
 # //////////////////////////////////////////////////////////////////
-[ -f ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.0
-[ -f ~/.vim ] && mv ~/.vim ~/.vim.0
-ln -s ${BASE_DIR}/vimrc ~/.vimrc
-ln -s ${BASE_DIR}/vimfiles ~/.vim
+create_symlink ${BASE_DIR}/vimrc ~/.vimrc
+create_symlink ${BASE_DIR}/vimfiles ~/.vim
 
 # __END__
