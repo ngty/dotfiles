@@ -153,7 +153,7 @@
 # Simple tags
 tag "terms",     "xterm|[u]?rxvt"
 tag "browser",   "midori|firefox|chromium"
-tag "filer",     "pcmanfm|rox"
+tag "filer",     "pcmanfm|rox|evince"
 tag "machines",  "virtualbox"
 
 # Placement
