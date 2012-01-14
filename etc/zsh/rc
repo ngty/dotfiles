@@ -26,7 +26,6 @@ alias sudo="sudo -E " # pass env variables to root
 
 # Keep things organized
 source $HOME/etc/zsh/prompt
-source $HOME/etc/zsh/title
 source $HOME/etc/zsh/exports
 source $HOME/etc/zsh/aliases
 
