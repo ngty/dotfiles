@@ -11,5 +11,9 @@ ibus-daemon -d -x -r -n subtle
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
+# Screensaver
+# see https://wiki.archlinux.org/index.php/Xscreensaver
+/usr/bin/xscreensaver -no-splash &
+
 # Launch wm to support mounting external storage
 exec ck-launch-session dbus-launch subtle
