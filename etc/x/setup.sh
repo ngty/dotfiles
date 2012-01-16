@@ -5,7 +5,7 @@ DIR=`dirname $0`
 DIR=`cd $DIR && pwd`
 
 source $DIR/os/$(machine_os)
-create_symlink $DIR/xinitrc ~/.xinitrc
-create_symlink $DIR/Xdefaults ~/.Xdefaults
+create_symlink $DIR/initrc ~/.xinitrc
+create_symlink $DIR/defaults ~/.Xdefaults
 
 # __END__
