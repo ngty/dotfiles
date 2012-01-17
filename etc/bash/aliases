@@ -1,6 +1,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color'
 alias tmux='tmux -2'
+alias vi=vim
 
 alias gbr='git branch'
 alias gad='git add'
