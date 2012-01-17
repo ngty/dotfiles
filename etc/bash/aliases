@@ -24,6 +24,7 @@ alias s-down-wifi=$HOME/bin/s/turn-off-wifi
 alias s-fix-wifi='s-down-wifi; s-up-wifi'
 alias s-pacman='sudo pacman'
 alias s-rc.d='sudo rc.d'
+alias s-change-root=$HOME/bin/s/change-root
 alias s-load-vbox-modules='sudo sh -c "modprobe vboxdrv; modprobe vboxnetflt"'
 
 # __END__
