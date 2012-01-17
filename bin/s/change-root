@@ -28,7 +28,7 @@ sudo mount -v -t sysfs /sys $CHROOT/root/sys
 sudo mount -v -t tmpfs /tmp $CHROOT/root/tmp
 
 # Copy whatever files we need
-for c in $CONFIGS; do sudo cp $c $CHROOT/root/$c ; done
+for c in ${CONFIGS[@]}; do sudo cp $c $CHROOT/root/$c ; done
 
 # Automatically create $LOGIN & assign him to "sudo"
 sudo sh -c "cat <<EOF > $CHROOT/root/root/.bashrc
