@@ -1,0 +1,57 @@
+#!/bin/bash
+CHROOT=/mnt/chroots/${1}
+PACKAGES=( base base-devel sudo git )
+CONFIGS=( /etc/resolv.conf /etc/sudoers )
+LOGIN=`whoami`
+PROMPT="($0:$1)"
+
+if [[ -z "$1" ]]; then
+  echo "$PROMPT USAGE: $ $0 <NAME>"
+  exit 1
+fi
+
+# Create chroot dir if it isn't already present,
+# see https://wiki.archlinux.org/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Classic_Way
+if [[ ! -d $CHROOT ]]; then
+  echo "$PROMPT preparing fresh chroot environment ... "
+  sudo mkdir -p $CHROOT
+  sudo pacman -S --needed devtools
+  sudo mkarchroot $CHROOT/root ${PACKAGES[@]}
+fi
+
+# Mount whatever we need,
+# see http://rescatux.berlios.de/wiki/Squeeze_Chroot#Bind_Mount
+echo "$PROMPT preparing for chrooting, mounting filesystems ... "
+sudo mount -v -o bind /dev $CHROOT/root/dev
+sudo mount -v -t proc /proc $CHROOT/root/proc
+sudo mount -v -t sysfs /sys $CHROOT/root/sys
+sudo mount -v -t tmpfs /tmp $CHROOT/root/tmp
+
+# Copy whatever files we need
+for c in $CONFIGS; do sudo cp $c $CHROOT/root/$c ; done
+
+# Automatically create $LOGIN & assign him to "sudo"
+sudo sh -c "cat <<EOF > $CHROOT/root/root/.bashrc
+  groupadd sudo 2>&1
+  useradd --home /home/$LOGIN --groups sudo --create-home $LOGIN
+
+  echo \"$PROMPT setting passwd for user '$LOGIN' ... \"
+  passwd $LOGIN
+
+  echo \"$PROMPT logging in as '$LOGIN' ... \"
+  login $LOGIN
+
+  echo \"$PROMPT exiting chroot ... \"
+  exit
+EOF"
+
+# Changing root
+sudo chroot $CHROOT/root bash
+
+# Cleaning up
+echo "$PROMPT unmounting no-longer-needed filesystems ... "
+for d in dev proc sys tmp; do
+  sudo umount -v $CHROOT/root/$d
+done
+
+# __END__
