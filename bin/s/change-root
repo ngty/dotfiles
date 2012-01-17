@@ -1,6 +1,6 @@
 #!/bin/bash
 CHROOT=/mnt/chroots/${1}
-PACKAGES=( base base-devel sudo git )
+PACKAGES=( base base-devel sudo git openssh )
 CONFIGS=( /etc/resolv.conf /etc/sudoers )
 LOGIN=`whoami`
 PROMPT="($0:$1)"
@@ -22,10 +22,11 @@ fi
 # Mount whatever we need,
 # see http://rescatux.berlios.de/wiki/Squeeze_Chroot#Bind_Mount
 echo "$PROMPT preparing for chrooting, mounting filesystems ... "
-sudo mount -v -o bind /dev $CHROOT/root/dev
-sudo mount -v -t proc /proc $CHROOT/root/proc
-sudo mount -v -t sysfs /sys $CHROOT/root/sys
-sudo mount -v -t tmpfs /tmp $CHROOT/root/tmp
+sudo mount -o bind /dev $CHROOT/root/dev
+sudo mount -t devpts none $CHROOT/root/dev/pts
+sudo mount -t proc /proc $CHROOT/root/proc
+sudo mount -t sysfs /sys $CHROOT/root/sys
+sudo mount -t tmpfs /tmp $CHROOT/root/tmp
 
 # Copy whatever files we need
 for c in ${CONFIGS[@]}; do sudo cp $c $CHROOT/root/$c ; done
