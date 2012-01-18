@@ -1,8 +1,9 @@
 #!/bin/bash
-source `dirname $0`/../helpers
-
-DIR=`dirname $0`
+DIR=`dirname ${BASH_SOURCE[0]}`
 DIR=`cd $DIR && pwd`
+
+source $DIR/../helpers
+source $DIR/os/$(machine_os)
 
 create_symlink $DIR/rc ~/.zshrc
 create_symlink $DIR/profile ~/.zprofile
