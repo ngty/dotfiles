@@ -4,6 +4,6 @@ DIR=`cd $DIR && pwd`
 
 source $DIR/../helpers
 source $DIR/os/$(machine_os)
-create_symlink $DIR/conf ~/.tmux.conf
+create_symlink $DIR/config ~/.tmux.conf
 
 # __END__
