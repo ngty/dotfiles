@@ -1,5 +1,6 @@
 #!/bin/bash
-CHROOT=/mnt/chroots/${1}
+PROJECT=${1}
+CHROOT=/mnt/chroots/${PROJECT}
 PACKAGES=( base base-devel sudo git openssh )
 CONFIGS=( /etc/resolv.conf /etc/sudoers )
 LOGIN=`whoami`
@@ -40,7 +41,7 @@ sudo sh -c "cat <<EOF > $CHROOT/root/root/.bashrc
   passwd $LOGIN
 
   echo \"$PROMPT logging in as '$LOGIN' ... \"
-  login $LOGIN
+  login $LOGIN TERM=screen-256color
 
   echo \"$PROMPT exiting chroot ... \"
   exit
