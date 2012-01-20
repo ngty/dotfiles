@@ -6,6 +6,11 @@ URxvt.font:        xft:monaco-12:dpi=96
 URxvt.foreground:  #ffffff
 URxvt.background:  #000000
 
+# See https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages_on_xterm_or_rxvt-unicode
+URxvt.colorIT:     #87af5f
+URxvt.colorBD:     #d7d7d7
+URxvt.colorUL:     #87afd7
+
 # ===================================================
 # Fonts Specific
 # ===================================================
