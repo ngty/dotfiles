@@ -83,7 +83,7 @@ set -g base-index 1
 set -g set-titles on
 
 # wm window title string (uses statusbar variables)
-set -g set-titles-string "tmux.#I.#W"
+set -g set-titles-string "tmux(#S)$ #W"
 
 # statusbar -------------------------------
 set -g display-time 2000
@@ -99,8 +99,8 @@ set-window-option -g window-status-bg default
 set-window-option -g window-status-attr dim
 
 # active window title colors
-set-window-option -g window-status-current-fg green
-set-window-option -g window-status-current-bg default
+set-window-option -g window-status-current-fg black
+set-window-option -g window-status-current-bg white
 set-window-option -g window-status-current-attr bright
 
 # command/message line colors
@@ -109,8 +109,8 @@ set -g message-bg black
 set -g message-attr bright
 
 # show some useful status but only when tmux is started
-set -g status-left "#[fg=red,bright]#H#[default]|"
-set -g status-right "|#[fg=cyan,bright]%H:%M #[default]"
+set -g status-left "#[fg=red,bright][#S][#P]#[default]"
+set -g status-right "#[fg=black]#[bg=yellow]#([[ -f /tmp/.chrootid ]] && echo '[CHROOT]')#[default]"
 set -g status-right-length 50
 
 # set shell
