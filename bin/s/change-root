@@ -1,9 +1,9 @@
 #!/bin/bash
 PROJECT=${1}
-CHROOT=/mnt/chroots/${PROJECT}
+LOGIN=`whoami`
+CHROOT=/mnt/chroots/${PROJECT}.${LOGIN}
 PACKAGES=( base base-devel sudo git openssh )
 CONFIGS=( /etc/resolv.conf /etc/sudoers )
-LOGIN=`whoami`
 PROMPT="($0:$1)"
 ALREADY_EXIST=1
 
