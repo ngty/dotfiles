@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -f /tmp/.chrootid ]]; then
+  echo "#[bg=yellow fg=black,bold]"
+else
+  echo "#[bg=white fg=black,bold]"
+fi
+
