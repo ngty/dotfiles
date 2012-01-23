@@ -29,22 +29,22 @@ bind-key k confirm-before kill-pane
 bind-key b set-option status
 
 # ctrl+up/down cylcles through panes
-bind-key -n C-up select-pane -U
-bind-key -n C-down select-pane -D
-bind-key -n C-left select-pane -L
-bind-key -n C-right select-pane -R
+#bind-key -n C-up select-pane -U
+#bind-key -n C-down select-pane -D
+#bind-key -n C-left select-pane -L
+#bind-key -n C-right select-pane -R
 
 # ctrl+left/right cycles through windows
 #bind-key -n M-right next
 #bind-key -n M-left prev
 
 # ctrl+shift+left/right moves windows
-bind-key -n M-S-right swap-window -t +
-bind-key -n M-S-left swap-window -t -
-bind-key -n M-C-right swap-window -t +
-bind-key -n M-C-left swap-window -t -
-bind-key M-C-right swap-window -t +
-bind-key M-C-left swap-window -t -
+#bind-key -n M-S-right swap-window -t +
+#bind-key -n M-S-left swap-window -t -
+#bind-key -n M-C-right swap-window -t +
+#bind-key -n M-C-left swap-window -t -
+#bind-key M-C-right swap-window -t +
+#bind-key M-C-left swap-window -t -
 
 # open a man-page in new window
 bind / command-prompt "split-window 'exec man %%'"
