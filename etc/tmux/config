@@ -110,7 +110,7 @@ set -g message-attr bright
 
 # show some useful status but only when tmux is started
 set -g status-left-length 50
-set -g status-left "#(sh ~/etc/tmux/scripts/apply-chroot-color)[#S]#[default]"
+set -g status-left "#([[ -f /tmp/.chrootid ]] && echo '#[fg=yellow,bold]' || echo '#[fg=white,bold]')[#S]#[default]"
 set -g status-right-length 60
 set -g status-right "| #[fg=white,bold]%a %d %b %H:%M#[default] #(sh ~/etc/tmux/scripts/show-battery-status)"
 
