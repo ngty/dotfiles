@@ -4,7 +4,7 @@
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-ibus-daemon -d -x -r -n subtle
+ibus-daemon -d -x -r -n awesome
 
 # Sync PRIMARY (mouse select & shift insert) & CLIPBOARD (Ctrl-c & Ctrl-v)
 # see http://mutelight.org/articles/subtleties-of-the-x-clipboard
@@ -16,4 +16,4 @@ autocutsel -selection PRIMARY -fork &
 /usr/bin/xscreensaver -no-splash &
 
 # Launch wm to support mounting external storage
-exec ck-launch-session dbus-launch subtle
+exec ck-launch-session dbus-launch awesome
