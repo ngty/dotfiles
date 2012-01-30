@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if $if_up; then
+  rc.d start openntpd
+elif $if_down; then
+  rc.d stop openntpd
+fi
