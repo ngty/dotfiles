@@ -6,7 +6,7 @@ source $DIR/devices
 CONF=/tmp/`whoami`/wifi.conf
 
 sudo rfkill unblock wifi
-sudo ifconfig $WIFI up
+sudo ip link set $WIFI up
 
 if [[ -n "$1" ]]; then
   CONF=${DIR}/wpa/${1}

@@ -4,7 +4,7 @@ DIR=`dirname $0`/../../etc/network
 source $DIR/devices
 
 sudo dhcpcd -k $WIFI
-sudo ifconfig $WIFI down
+sudo ip link set $WIFI down
 sudo wpa_cli terminate
 sudo wpa_cli quit
 sudo rfkill block wifi
