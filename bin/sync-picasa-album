@@ -1,0 +1,17 @@
+#!/bin/bash
+dir=${1:=`pwd`}
+cmd="google picasa"
+source $dir/META # extracts $album
+
+# Creates album only if it doesn't yet exist
+match=`$cmd list-albums --title='^${album}$' --fields='name'`
+[ $match == 0 ] && $cmd create --title="$album"
+
+# Uploads all photos in specified dir, only if it hasn't yet been uploaded
+for src in `cd $dir && find . -name '*.*' -type f | grep -v '.swp'`; do
+  photo=`basename $src`
+  match=`$cmd list --title='^${album}$' --fields='name' --photo='^${photo}$'`
+  [ $match == 0 ] && $cmd post --title="^$album$" --src="$src" --photo="$photo"
+done
+
+# __END__
