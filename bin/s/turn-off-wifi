@@ -3,8 +3,8 @@
 DIR=`dirname $0`/../../etc/network
 source $DIR/devices
 
-sudo dhcpcd -k $WIFI
-sudo ip link set $WIFI down
+sudo dhcpcd -k $DEV
+sudo ip link set $DEV down
 sudo wpa_cli terminate
 sudo wpa_cli quit
 sudo rfkill block wifi

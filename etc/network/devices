@@ -1,1 +1,1 @@
-WIFI=wlan0
+DEV=${DEV:-wlan0}

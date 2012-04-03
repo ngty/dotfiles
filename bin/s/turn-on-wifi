@@ -6,7 +6,7 @@ source $DIR/devices
 CONF=/tmp/`whoami`/wifi.conf
 
 sudo rfkill unblock wifi
-sudo ip link set $WIFI up
+sudo ip link set $DEV up
 
 if [[ -n "$1" ]]; then
   CONF=${DIR}/wpa/${1}
@@ -19,8 +19,8 @@ else
   cat $DIR/wpa/*                               >> $CONF
 fi
 
-sudo wpa_supplicant -i $WIFI -c $CONF -B
+sudo wpa_supplicant -i $DEV -c $CONF -B
 sudo wpa_cli -B
-sudo dhcpcd -d $WIFI
+sudo dhcpcd -d $DEV
 
 # __END__
