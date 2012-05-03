@@ -6,8 +6,6 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
--- Mac OS X's Expose
-require("revelation")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -242,9 +240,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     --awful.key({ modkey, "Control" }, "n", awful.client.restore),
-
-    -- Revelation
-    awful.key({modkey}, "Menu", revelation),
 
     -- Launcher
     awful.key({ modkey }, "x", function ()
