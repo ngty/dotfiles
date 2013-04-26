@@ -86,6 +86,14 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# move to previous/next workspaces
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
+
+# move focused container to previous/next workspaces
+bindsym $mod+Shift+bracketright move container to workspace next
+bindsym $mod+Shift+bracketleft move container to workspace prev
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
