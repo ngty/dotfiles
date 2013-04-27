@@ -5,8 +5,8 @@ Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
 URxvt.scrollBar: off
-URxvt.font: xft:UbuntuMono:medium:pixelsize=18
-URxvt.boldFont: xft:UbuntuMono:medium:pixelsize=18
+URxvt.font: xft:UbuntuMono-14
+URxvt.boldFont: xft:UbuntuMono-14
 
 ! to match gnome-terminal "Linux console" scheme
 ! foreground/background
