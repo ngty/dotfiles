@@ -1,0 +1,11 @@
+alias ls='ls --color=auto'
+alias vi=/usr/bin/vim
+
+alias gst="git status"
+alias gco="git checkout"
+alias gad="git add"
+alias glg="git log"
+alias gdf="git diff"
+alias gbr="git branch"
+alias gcm="git commit"
+alias grm="git rm"
