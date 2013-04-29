@@ -1,0 +1,23 @@
+s-start() {
+  sudo systemctl start $1.service
+}
+
+s-restart() {
+  sudo systemctl restart $1.service
+}
+
+s-stop() {
+  sudo systemctl stop $1.service
+}
+
+s-enable() {
+  sudo systemctl enable $1.service
+}
+
+s-status() {
+  sudo systemctl status $1.service
+}
+
+s-disable() {
+  sudo systemctl disable $1.service
+}
