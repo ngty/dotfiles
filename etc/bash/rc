@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Enables tab completion in bash
+complete -cf sudo
+
+# Better manage friends
 source ~/etc/bash/aliases
 source ~/etc/bash/exports
 source ~/etc/bash/functions
