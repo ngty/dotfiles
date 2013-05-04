@@ -4,3 +4,7 @@ current_git_branch(){
 }
 
 export PS1='\n$(pwd)\n[\u@\h]\$ '
+
+export PATH=~/bin:$PATH
+export PATH=./vendor/bin:$PATH
+export PATH=./bin:$PATH
