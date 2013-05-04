@@ -5,6 +5,10 @@ current_git_branch(){
 
 export PS1='\n$(pwd)\n[\u@\h]\$ '
 
+# Dynamically determine the available rubies
+export RUBIES=($(find /home/ty/bin/lib/rubies -maxdepth 1 -mindepth 1))
+
+# PATH !!
 export PATH=~/bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
