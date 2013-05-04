@@ -8,7 +8,11 @@
 # Enables tab completion in bash
 complete -cf sudo
 
-# Better manage friends
+# Development
+source ~/bin/share/chruby/share/chruby/chruby.sh
+source ~/bin/share/chruby/share/chruby/auto.sh
+
+# Better manage local friends
 source ~/etc/bash/aliases
 source ~/etc/bash/exports
 source ~/etc/bash/functions
