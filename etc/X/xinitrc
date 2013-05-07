@@ -15,6 +15,9 @@ fi
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap ~/etc/X/Xmodmap
 
+# Ensure ~/.Xresources takes effect
+xrdb -merge ~/.Xresources
+
 # Start windows manager
 exec i3
 # exec gnome-session
