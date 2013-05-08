@@ -8,6 +8,9 @@
 # Enables tab completion in bash
 complete -cf sudo
 
+# Prefer vi mode
+set -o vi
+
 # Development
 source ~/bin/share/chruby/share/chruby/chruby.sh
 source ~/bin/share/chruby/share/chruby/auto.sh
