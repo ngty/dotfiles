@@ -78,4 +78,4 @@ current_git_branch(){
   [ -n "$branch" ] && echo "($branch)"
 }
 
-export PS1="\n${Green}\$(pwd)${Color_Off}${Yellow}\$(current_git_branch)${Color_Off}\n\u@\h\$ "
+export PS1="\n\u@\h:${Green}\$(pwd)${Color_Off}${Yellow}\$(current_git_branch)${Color_Off}\n\$ "
