@@ -11,6 +11,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+# Synchronizes the two copy/paste buffers mainly used by X applications
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
 # Use custom key mappings
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap ~/etc/X/Xmodmap
