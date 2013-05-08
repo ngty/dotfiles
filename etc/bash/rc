@@ -19,3 +19,4 @@ source ~/bin/share/chruby/share/chruby/auto.sh
 source ~/etc/bash/aliases
 source ~/etc/bash/exports
 source ~/etc/bash/functions
+source ~/etc/bash/prompts
