@@ -22,8 +22,12 @@ xmodmap ~/etc/X/Xmodmap
 # Ensure ~/.Xresources takes effect
 xrdb -merge ~/.Xresources
 
+# Wallpaper
+feh --bg-fill ~/etc/X/pics/current.jpg
+
 # Start windows manager
-exec i3
+exec ~/bin/dwm
+#exec i3
 # exec gnome-session
 # exec startkde
 # exec startxfce4
