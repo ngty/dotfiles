@@ -36,10 +36,10 @@ Bundle 'FuzzyFinder'
 
 
 " Command aliases
-command Zb FufBuffer
-command Zf FufFile
-command Zd FufDir
-command Zl FufLine
+command Qbf FufBuffer
+command Qfl FufFile
+command Qdr FufDir
+command Qln FufLine
 
 
 " Theming
