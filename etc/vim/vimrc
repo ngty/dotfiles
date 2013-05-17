@@ -20,7 +20,7 @@ Bundle 'tpope/vim-rails.git'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " vim-scripts repos
-Bundle 'Wombat'
+Bundle 'ngty/Wombat'
 Bundle 'CSApprox'
 
 "Bundle 'FuzzyFinder'
