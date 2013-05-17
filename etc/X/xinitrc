@@ -25,6 +25,9 @@ xrdb -merge ~/.Xresources
 # Wallpaper
 feh --bg-fill ~/etc/X/pics/current.jpg
 
+# Disables all beep
+xset b off
+
 # Start windows manager
 exec ~/bin/dwm
 #exec i3
