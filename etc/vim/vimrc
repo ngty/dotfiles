@@ -21,9 +21,6 @@ Bundle 'gmarik/vundle'
 " Github Repos
 Bundle 'tpope/vim-rails.git'
 Bundle 'ngty/Wombat'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " Other git repos
 "Bundle 'git://git.wincent.com/command-t.git'
