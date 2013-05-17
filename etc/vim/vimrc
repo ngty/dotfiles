@@ -35,12 +35,6 @@ Bundle "EasyMotion"
 "Bundle 'FuzzyFinder'
 
 
-" Command aliases
-command ZBufExplorer BufExplorer
-command ZBufExplorerHSplit BufExplorerHorizontalSplit
-command ZBufExplorerVSplit BufExplorerVerticalSplit
-
-
 " Theming
 syntax enable
 colorscheme wombat
