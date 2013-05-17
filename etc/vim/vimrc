@@ -30,9 +30,16 @@ Bundle 'ngty/Wombat'
 
 " VIM-scripts repos
 Bundle 'CSApprox'
-Bundle "bufexplorer.zip"
 Bundle "EasyMotion"
-"Bundle 'FuzzyFinder'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
+
+" Command aliases
+command Zb FufBuffer
+command Zf FufFile
+command Zd FufDir
+command Zl FufLine
 
 
 " Theming
