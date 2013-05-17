@@ -44,8 +44,6 @@ filetype plugin indent on     " required!
 syntax enable
 colorscheme wombat
 set t_Co=256
-"set background=dark
-"highlight Normal ctermfg=white ctermbg=black
 
 "Tabbing
 set expandtab
