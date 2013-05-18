@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # ~/.xinitrc
 #
@@ -11,19 +11,24 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+# Local variables
+me=${BASH_SOURCE[0]}
+me=$([ -h $me ] && echo $(readlink $me) || echo $me)
+dir=$(dirname $me)
+
 # Synchronizes the two copy/paste buffers mainly used by X applications
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
 # Use custom key mappings
 xmodmap -e "remove Lock = Caps_Lock"
-xmodmap ~/etc/X/Xmodmap
+xmodmap $dir/share/keymaps
 
 # Ensure ~/.Xresources takes effect
 xrdb -merge ~/.Xresources
 
 # Wallpaper
-feh --bg-fill ~/etc/X/pics/00.jpg
+feh --bg-fill $dir/share/00.jpg
 
 # Disables all beep
 xset b off
