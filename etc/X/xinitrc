@@ -23,7 +23,7 @@ xmodmap ~/etc/X/Xmodmap
 xrdb -merge ~/.Xresources
 
 # Wallpaper
-feh --bg-fill ~/etc/X/pics/current.jpg
+feh --bg-fill ~/etc/X/pics/00.jpg
 
 # Disables all beep
 xset b off
