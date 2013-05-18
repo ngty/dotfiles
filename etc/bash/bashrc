@@ -16,7 +16,11 @@ source ~/bin/share/chruby/share/chruby/chruby.sh
 source ~/bin/share/chruby/share/chruby/auto.sh
 
 # Better manage local friends
-source ~/etc/bash/aliases
-source ~/etc/bash/exports
-source ~/etc/bash/functions
-source ~/etc/bash/prompts
+me=${BASH_SOURCE[0]}
+me=$([ -h $me ] && echo $(readlink $me) || echo $me)
+dir=$(dirname $me)
+
+source $dir/aliases
+source $dir/exports
+source $dir/functions
+source $dir/prompts
