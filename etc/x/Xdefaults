@@ -5,7 +5,7 @@ Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
 URxvt.scrollBar: off
-URxvt.font: xft:UbuntuMono:size=14
-URxvt.boldFont: xft:UbuntuMono:size=14
+URxvt.font: xft:UbuntuMono:size=15
+URxvt.boldFont: xft:UbuntuMono:size=15
 URxvt*background: #000000
 URxvt*foreground: #ffffff
