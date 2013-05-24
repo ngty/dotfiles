@@ -24,7 +24,7 @@
 #
 
 alignment top_left
-background no
+background yes
 border_width 1
 cpu_avg_samples 2
 default_color white
@@ -53,6 +53,9 @@ uppercase no
 use_spacer none
 show_graph_scale no
 show_graph_range no
+own_window_transparent yes
+own_window yes
+own_window_type override
 
 TEXT
 ${scroll 16 $nodename - $sysname $kernel on $machine | }
