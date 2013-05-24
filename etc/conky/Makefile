@@ -3,8 +3,8 @@ PWD=$(shell pwd)
 all: clean setup
 
 clean:
-	rm -f ~/.conky.conf
+	rm -f ~/.conkyrc
 
 setup:
-	ln -s $(PWD)/conky.conf ~/.conky.conf
+	ln -s $(PWD)/conkyrc ~/.conkyrc
 
