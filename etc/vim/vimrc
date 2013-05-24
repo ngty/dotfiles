@@ -33,16 +33,21 @@ Bundle 'FuzzyFinder'
 
 
 " Command aliases
-command Qbf FufBuffer
-command Qfl FufFile
-command Qdr FufDir
-command Qln FufLine
+"command Qbf FufBuffer
+"command Qfl FufFile
+"command Qdr FufDir
+"command Qln FufLine
+noremap <silent> <Leader>b :FufBuffer<CR>
+noremap <silent> <Leader>f :FufFile<CR>
+noremap <silent> <Leader>d :FufDir<CR>
+noremap <silent> <Leader>l :FufLine<CR>
+noremap <silent> <Leader>t :FufTag<CR>
 
 " Split view navigating
-nmap <silent> <C-K> :wincmd k<CR>
-nmap <silent> <C-J> :wincmd j<CR>
-nmap <silent> <C-H> :wincmd h<CR>
-nmap <silent> <C-L> :wincmd l<CR>
+noremap <silent> <C-K> :wincmd k<CR>
+noremap <silent> <C-J> :wincmd j<CR>
+noremap <silent> <C-H> :wincmd h<CR>
+noremap <silent> <C-L> :wincmd l<CR>
 
 " Theming
 syntax enable
