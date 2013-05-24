@@ -3,7 +3,7 @@ PWD=$(shell pwd)
 all: clean setup
 
 clean:
-	rm ~/.tmux.conf
+	rm -f ~/.tmux.conf
 
 setup:
 	ln -s $(PWD)/tmux.conf ~/.tmux.conf

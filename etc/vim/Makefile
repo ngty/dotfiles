@@ -3,7 +3,7 @@ PWD=$(shell pwd)
 all: clean setup
 
 clean:
-	rm ~/.vimrc
+	rm -f ~/.vimrc
 
 setup:
 	ln -s $(PWD)/vimrc ~/.vimrc

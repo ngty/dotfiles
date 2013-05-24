@@ -5,7 +5,7 @@ all: clean setup
 
 clean:
 	for f in $(FILES); do \
-		rm ~/.$$f; \
+		rm -f ~/.$$f; \
 	done
 
 setup:
