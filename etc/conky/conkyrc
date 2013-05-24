@@ -59,7 +59,7 @@ show_graph_range no
 TEXT
 ${color darkgrey}$hr$color
 Uptime: $uptime
-Temperature (in C): ${acpitemp}
+Temperature (C): ${acpitemp}
 CPU Usage: $cpu% ${cpubar 4}
 Frequencies (GHz): ${freq_g 1} / ${freq_g 2} / ${freq_g 3} / ${freq_g 4}
 RAM Usage: $mem of $memmax ($memperc%) ${membar 4}
@@ -71,7 +71,7 @@ Power:
 * battery: $battery_percent% ($battery_time) ${battery_bar 4}
 ${color darkgrey}$hr$color
 Filesystems:
-* sda: ${fs_used /} of ${fs_size /} - ${fs_used_perc /}% ${fs_bar 6 /}
+* sda: ${fs_used /} of ${fs_size /} (${fs_used_perc /}%) ${fs_bar 6 /}
 ${color darkgrey}$hr$color
 Networking:
 * wlp3s0 (${addr wlp3s0}): up:${upspeed wlp3s0} / down:${downspeed wlp3s0}
