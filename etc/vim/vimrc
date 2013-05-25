@@ -96,4 +96,10 @@ set backspace=indent,eol,start
 set viminfo='20,\"1000 "
 set history=50
 
+" Undos
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000 
+set undoreload=10000
+
 " __END__
