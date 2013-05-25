@@ -33,6 +33,9 @@ feh --bg-fill $dir/share/00.jpg
 # Disables all beep
 xset b off
 
+# Start conky
+conky --daemonize
+
 # Start windows manager
 exec ~/bin/dwm
 #exec i3
