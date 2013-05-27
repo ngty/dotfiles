@@ -1,5 +1,4 @@
 export EDITOR=vim
-export RUBIES=($(find /home/ty/bin/lib/rubies -maxdepth 1 -mindepth 1))
 
 # PATH !!
 export PATH=~/bin:$PATH
