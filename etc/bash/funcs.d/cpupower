@@ -1,0 +1,20 @@
+s-powerset(){
+  sudo cpupower frequency-set $1
+  watch grep \"cpu MHz\" /proc/cpuinfo
+}
+
+s-powerdown() {
+  if [ -z "$1" ]; then
+    s-powerset "-g powersave"
+  else
+    s-powerset "-u $1"
+  fi
+}
+
+s-powerup() {
+  if [ -z "$1" ]; then
+    s-powerset "-g performance"
+  else
+    s-powerset "-d $1"
+  fi
+}
