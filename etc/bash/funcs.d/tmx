@@ -1,0 +1,11 @@
+tmx(){
+  local session=${1:-X}
+
+  if [[ `tmux ls | grep "^$session" | wc -l` == '0' ]]; then
+    tmux new-session -s $session
+  elif [[ -z "$TMUX" ]]; then
+    tmux attach-session -t $session
+  else
+    tmux switch-client -t $session
+  fi
+}
