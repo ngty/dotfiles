@@ -1,0 +1,17 @@
+buildrb(){
+  local target=$1
+  local build_home=/opt/ruby-build
+  local rubies_home=/opt/rubies
+
+  (
+    cd $build_home && \
+      git pull
+  )
+
+  if [ -n "$target" ]; then
+    $build_home/bin/ruby-build $target $rubies_home/$target
+  else
+    echo "USAGE: $0 RUBY"
+    echo "WHERE: RUBY ~" `cd $build_home/share/ruby-build && ls`
+  fi
+}
