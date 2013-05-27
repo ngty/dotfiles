@@ -9,7 +9,9 @@ buildrb(){
   )
 
   if [ -n "$target" ]; then
-    $build_home/bin/ruby-build $target $rubies_home/$target
+    (
+      $build_home/bin/ruby-build $target $rubies_home/$target
+    )
   else
     echo "USAGE: $0 RUBY"
     echo "WHERE: RUBY ~" `cd $build_home/share/ruby-build && ls`
