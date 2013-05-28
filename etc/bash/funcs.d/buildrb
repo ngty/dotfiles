@@ -10,7 +10,12 @@ buildrb(){
 
   if [ -n "$target" ]; then
     (
-      $build_home/bin/ruby-build $target $rubies_home/$target
+      $build_home/bin/ruby-build $target $rubies_home/$target && \
+        (
+          export RUBIES=($(find $rubies_home -maxdepth 1 -mindepth 1))
+          chruby $target && \
+            gem install --install-dir $GEM_ROOT --no-rdoc --no-ri bundle
+        )
     )
   else
     echo "USAGE: $0 RUBY"
