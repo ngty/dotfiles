@@ -30,6 +30,7 @@ Bundle 'CSApprox'
 Bundle "EasyMotion"
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'tComment'
 
 
 " Command aliases
