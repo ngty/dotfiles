@@ -1,0 +1,24 @@
+#!/bin/bash
+ME=$0
+PWD=$(pwd)
+
+if [ -d $PWD/.git ]; then
+
+  if [ -f $PWD/.srclist ]; then
+    ctags -R --exclude='.git' -L $PWD/.srclist
+  else
+    ctags -R --exclude='.git' $PWD
+  fi
+
+else
+
+  cd ..
+
+  if [ "$(pwd)" == "$PWD" ]; then
+    echo "Got to /, have not found your project root, abort!"
+    exit 1
+  else
+    exec $ME
+  fi
+
+fi
