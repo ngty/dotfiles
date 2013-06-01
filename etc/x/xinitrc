@@ -37,7 +37,7 @@ xset b off
 conky --daemonize
 
 # Start windows manager
-exec ~/bin/dwm
+exec ~/bin/gen/dwm
 #exec i3
 # exec gnome-session
 # exec startkde
