@@ -54,11 +54,22 @@ if [ $(diff ${list}.* | wc -l) != 0 ]; then
   exit 1
 fi
 
+# Show the generated list
+echo "SUCCESS !! Compiled the list of renamables in $LIST :)"
+echo -n "  hit any key to review "; read dontcare
+vim -R $LIST
+
+# Ask if we should continue
+echo -n "HAPPY ?! Shall we continue [yes/no]: "
+read yesno
+
 # Loop through the captured list & perform renaming
-while read line; do
-  src=$(echo $line | awk -F\> '{print $1}')
-  dest=$(echo $line | awk -F\> '{print $2}')
-  mv -v $src $dest
-done < $LIST
+if [ "${yesno^^}" == "YES" ]; then
+  while read line; do
+    src=$(echo $line | awk -F\> '{print $1}')
+    dest=$(echo $line | awk -F\> '{print $2}')
+    mv -v $src $dest
+  done < $LIST
+fi
 
 exit 0
