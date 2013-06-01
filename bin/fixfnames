@@ -1,0 +1,64 @@
+#!/bin/bash
+ME=$(basename $0)
+USR=$(whoami)
+PWD=$(pwd)
+DIR=${1:-$(pwd)}
+DIR=$(cd $DIR && pwd)
+LIST=/tmp/$USR/${ME}.list
+PATH=/usr/bin/vendor_perl:$PATH
+
+# Derive new file name from file modified timing & type
+nname(){
+  local ofile=$1
+  local fmime=$(exiftool $ofile | grep 'MIME Type' | awk -F: '{print $2}')
+  local ftype=$(echo $fmime | awk -F/ '{print $1}' | tr [:lower:] [:upper:])
+  local fext=$(echo $fmime | awk -F/ '{print $2}')
+  local ftime=$(exiftool $ofile |  grep '^Modify Date' | cut -c 35-53 | sed 's/[: ]//g')
+  local fname=
+
+  for i in a b c d e f g h i j k l m n o p q r s t u v w x y z; do
+    fname=${ftype}_${ftime}${i}.${fext}
+
+    if [ $(cat $LIST | awk -F\> '{print $2}' | grep $fname | wc -l) == 0 ]; then
+      echo $fname
+      break
+    fi
+  done
+}
+
+# Abort if cannot find extraction tool
+if [ $(type exiftool | grep 'not found' | wc -l) != 0 ]; then
+  echo 'ABORTED !! Cannot find `exiftool` in PATH !!'
+  exit 1
+fi
+
+# Creates file list to ease working
+mkdir -p $(dirname $LIST)
+echo -n > $LIST
+
+# Generates list of old & new file names
+cd $DIR && \
+  for ofile in $(ls *.*); do
+    nfile=$(nname $ofile)
+    echo "$ofile > $nfile" >> $LIST
+  done
+
+# Abort if there is possible conflicting names
+list=/tmp/$USR/${ME}.list
+cat $LIST | awk -F\> '{print $2}' | sort > ${list}.2
+cat $LIST | awk -F\> '{print $2}' | sort | uniq > ${list}.1
+
+if [ $(diff ${list}.* | wc -l) != 0 ]; then
+  echo "ABORTED !! Conflicting file names, pls check $LIST"
+  diff ${list}.*
+  exit 1
+fi
+
+# Loop through the captured list & perform renaming
+while read line; do
+  src=$(echo $line | awk -F\> '{print $1}')
+  dest=$(echo $line | awk -F\> '{print $2}')
+  mv -v $src $dest
+done < $LIST
+
+exit 0
