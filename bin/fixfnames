@@ -13,8 +13,12 @@ nname(){
   local fmime=$(exiftool $ofile | grep 'MIME Type' | awk -F: '{print $2}')
   local ftype=$(echo $fmime | awk -F/ '{print $1}' | tr [:lower:] [:upper:])
   local fext=$(echo $fmime | awk -F/ '{print $2}')
-  local ftime=$(exiftool $ofile |  grep '^Modify Date' | cut -c 35-53 | sed 's/[: ]//g')
+  local ftime=$(exiftool $ofile |  grep '^Date/Time Original' | cut -c 35-53 | sed 's/[: ]//g')
   local fname=
+
+  if [ -z "$ftime" ]; then
+    ftime=$(exiftool $ofile |  grep '^File Modification Date/Time' | cut -c 35-53 | sed 's/[: ]//g')
+  fi
 
   for i in a b c d e f g h i j k l m n o p q r s t u v w x y z; do
     fname=${ftype}_${ftime}${i}.${fext}
@@ -70,6 +74,8 @@ if [ "${yesno^^}" == "YES" ]; then
     dest=$(echo $line | awk -F\> '{print $2}')
     mv -v $src $dest
   done < $LIST
+else
+  echo "OKIE, ur wish is my command, no action done :P"
 fi
 
 exit 0
