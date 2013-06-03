@@ -1,5 +1,4 @@
 alias ls='ls --color=auto'
-alias vi=/usr/bin/vim
 
 alias grb="git rebase"
 alias gst="git status"
