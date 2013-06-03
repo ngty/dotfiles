@@ -36,6 +36,9 @@ xset b off
 # Start conky
 conky --daemonize
 
+# Fake WM
+wmname LG3D
+
 # Start windows manager
 exec ~/bin/gen/dwm
 #exec i3
