@@ -1,4 +1,5 @@
 alias ls='ls --color=auto'
+alias alsamixer='amixer sset Master unmute; /usr/bin/alsamixer'
 
 alias grb="git rebase"
 alias gst="git status"
