@@ -2,6 +2,7 @@ export EDITOR=vim
 export RUBIES=($(find /opt/rubies -maxdepth 1 -mindepth 1))
 
 # PATH !!
+export PATH=./node_modules/.bin:$PATH
 export PATH=~/bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
