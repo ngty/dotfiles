@@ -1,9 +1,6 @@
 alias ls='ls --color=auto'
+alias bx="bundle exec"
 alias alsamixer='amixer sset Master unmute; /usr/bin/alsamixer'
-
-alias bx-rails="bundle exec rails"
-alias bx-rake="bundle exec rake"
-alias bx-rspec="bundle exec rspec"
 
 alias grb="git rebase"
 alias gst="git status"
