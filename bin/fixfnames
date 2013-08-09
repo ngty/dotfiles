@@ -13,11 +13,11 @@ nname(){
   local fmime=$(exiftool $ofile | grep 'MIME Type' | awk -F: '{print $2}')
   local ftype=$(echo $fmime | awk -F/ '{print $1}' | tr [:lower:] [:upper:])
   local fext=$(echo $fmime | awk -F/ '{print $2}')
-  local ftime=$(exiftool $ofile |  grep '^Date/Time Original' | cut -c 35-53 | sed 's/[: ]//g')
+  local ftime=$(exiftool $ofile |  grep '^Date/Time Original' | head -n1 | cut -c 35-53 | sed 's/[: ]//g')
   local fname=
 
   if [ -z "$ftime" ]; then
-    ftime=$(exiftool $ofile |  grep '^File Modification Date/Time' | cut -c 35-53 | sed 's/[: ]//g')
+    ftime=$(exiftool $ofile |  grep '^File Modification Date/Time' | head -n1 | cut -c 35-53 | sed 's/[: ]//g')
   fi
 
   for i in a b c d e f g h i j k l m n o p q r s t u v w x y z; do
