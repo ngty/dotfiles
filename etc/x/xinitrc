@@ -16,6 +16,12 @@ me=${BASH_SOURCE[0]}
 me=$([ -h $me ] && echo $(readlink $me) || echo $me)
 dir=$(dirname $me)
 
+# Chinese input
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon --daemonize
+
 # Synchronizes the two copy/paste buffers mainly used by X applications
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
