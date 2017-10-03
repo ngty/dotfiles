@@ -1,4 +1,4 @@
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias bx="bundle exec"
 alias alsamixer='amixer sset Master unmute; /usr/bin/alsamixer'
 
