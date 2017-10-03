@@ -1,7 +1,7 @@
 tmx(){
   local session=${1:-X}
 
-  if [[ `tmux ls | grep "^$session" | wc -l` == '0' ]]; then
+  if [[ `tmux ls 2>/dev/null | grep "^${session}:" | wc -l | xargs` == '0' ]]; then
     tmux new-session -s $session
   elif [[ -z "$TMUX" ]]; then
     tmux attach-session -t $session
