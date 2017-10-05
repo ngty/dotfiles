@@ -1,6 +1,11 @@
 alias ls='ls -G'
+alias nv='nvim'
 alias bx="bundle exec"
 alias alsamixer='amixer sset Master unmute; /usr/bin/alsamixer'
+
+# MacOS specific
+alias brw="brew"
+alias brc="brew cask"
 
 alias grb="git rebase"
 alias gst="git status"
