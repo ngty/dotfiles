@@ -9,7 +9,7 @@
 complete -cf sudo
 
 # Prefer vi mode
-set -o vi
+#set -o vi
 
 # Better manage local friends
 me=${BASH_SOURCE[0]}
