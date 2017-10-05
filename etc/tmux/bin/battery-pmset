@@ -1,0 +1,14 @@
+#!/bin/bash
+PERCENT=$(pmset -g batt | grep Internal | awk '{print $3}' | sed 's|;||')
+REMAIN=$(pmset -g batt | grep Internal | awk '{print $5}')
+STATUS=$(pmset -g batt | grep Internal | awk '{print $4}' | sed 's|;||')
+
+if [ "${STATUS}" = "discharging" ]; then
+  echo -n "${PERCENT}(-${REMAIN})"
+else
+  if [ "${STATUS}" = "charging" ]; then
+    echo -n "${PERCENT}(+${REMAIN})"
+  else
+    echo -n "${PERCENT}(\o/)"
+  fi
+fi

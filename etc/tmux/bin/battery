@@ -1,19 +1,11 @@
 #!/bin/bash
- 
-if [ "$(acpi -a | awk '{print $3}' | tr [a-z] [A-Z])" == "ON-LINE" ]; then
-  if [ "$(acpi -b | awk '{print $4}')" == "100%" ]; then
-    echo -n "100%"
-  else
-    echo -n "$(
-      acpi -b | \
-        awk '{gsub(",",""); print $4 "(+" $5}' | \
-          awk -F: '{print $1 ":" $2 ")"}'
-    )"
-  fi
+ME=${BASH_SOURCE[0]}
+DIR=$(dirname $ME)
+
+if [ "$(command -v pmset 2>/dev/null | wc -l | xargs)" = "1" ]; then
+  ${DIR}/battery-pmset
+elif [ "$(command -v acpi 2>/dev/null | wc -l | xargs)" = "1" ]; then
+  ${DIR}/battery-acpi
 else
-  echo -n "$(
-    acpi -b | \
-      awk '{gsub(",",""); print $4 "(-" $5}' | \
-        awk -F: '{print $1 ":" $2 ")"}'
-  )"
+  echo "(:X)"
 fi
