@@ -14,12 +14,15 @@ filetype plugin indent on " required!
 set rtp+=~/.config/nvim/bundle/vundle/
 call vundle#rc()
 
-
 " Vundle manages itself (required!)
 Bundle 'gmarik/vundle'
 
-" Github Repos
+" Theming Repos
 Bundle 'ngty/Wombat'
+Bundle 'NLKNguyen/papercolor-theme'
+
+" Github Repos
+Bundle 'benekastah/neomake'
 
 " Other git repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -31,7 +34,6 @@ Bundle "EasyMotion"
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'tComment'
-Bundle 'benekastah/neomake'
 
 
 " Command aliases
@@ -54,8 +56,26 @@ noremap <silent> <C-L> :wincmd l<CR>
 " Theming
 syntax enable
 syntax on
-colorscheme wombat
+"colorscheme wombat
+set background=light
 set t_Co=256
+set number
+set laststatus=2
+colorscheme PaperColor
+let g:airline_theme='papercolor'
+let g:lightline = { 'colorscheme': 'PaperColor' }
+
+" PaperColor specific
+" let g:PaperColor_Theme_Options = {
+"   \   'theme': {
+"   \     'default.dark': { 
+"   \       'override' : {
+"   \         'color00' : ['#080808', '232'],
+"   \         'linenumber_bg' : ['#080808', '232']
+"   \       }
+"   \     }
+"   \   }
+"   \ }
 
 " Tabbing
 set expandtab
