@@ -22,6 +22,7 @@ Bundle 'ngty/Wombat'
 Bundle 'NLKNguyen/papercolor-theme'
 
 " Github Repos
+Bundle 'tpope/vim-fugitive'
 Bundle 'benekastah/neomake'
 
 " Other git repos
