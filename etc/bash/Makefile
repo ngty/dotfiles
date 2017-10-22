@@ -13,4 +13,6 @@ setup:
 		ln -s $(PWD)/$$f ~/.$$f; \
 	done
 
-
+macos/deps:
+	brew install fzf && \
+		/usr/local/opt/fzf/install
