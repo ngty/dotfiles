@@ -33,20 +33,21 @@ Bundle 'rails.vim'
 Bundle 'CSApprox'
 Bundle "EasyMotion"
 Bundle 'L9'
-Bundle 'FuzzyFinder'
+"Bundle 'FuzzyFinder'
 Bundle 'tComment'
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
 
-
-" Command aliases
-"command Qbf FufBuffer
-"command Qfl FufFile
-"command Qdr FufDir
-"command Qln FufLine
-noremap <silent> <Leader>b :FufBuffer<CR>
-noremap <silent> <Leader>f :FufFile<CR>
-noremap <silent> <Leader>d :FufDir<CR>
-noremap <silent> <Leader>l :FufLine<CR>
-noremap <silent> <Leader>t :FufTag<CR>
+"" *FuzzyFinder* tweaks
+""command Qbf FufBuffer
+""command Qfl FufFile
+""command Qdr FufDir
+""command Qln FufLine
+" noremap <silent> <Leader>b :FufBuffer<CR>
+" noremap <silent> <Leader>f :FufFile<CR>
+" noremap <silent> <Leader>d :FufDir<CR>
+" noremap <silent> <Leader>l :FufLine<CR>
+" noremap <silent> <Leader>t :FufTag<CR>
 
 " Split view navigating
 noremap <silent> <C-K> :wincmd k<CR>
