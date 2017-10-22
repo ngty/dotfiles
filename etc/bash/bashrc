@@ -23,3 +23,8 @@ source $dir/prompts
 for f in `ls $dir/funcs.d`; do
   source $dir/funcs.d/$f
 done
+
+# Chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
