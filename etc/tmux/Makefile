@@ -1,6 +1,6 @@
 PWD=$(shell pwd)
 
-all: clean setup
+all: clean setup reload
 
 clean:
 	rm -f ~/.tmux.conf
@@ -11,3 +11,5 @@ setup:
 reload:
 	tmux source-file ~/.tmux.conf
 
+macos/deps:
+	brew install reattach-to-user-namespace
