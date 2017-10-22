@@ -24,7 +24,8 @@ for f in `ls $dir/funcs.d`; do
   source $dir/funcs.d/$f
 done
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-
