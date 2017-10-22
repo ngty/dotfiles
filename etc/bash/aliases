@@ -8,6 +8,10 @@ alias alsamixer='amixer sset Master unmute; /usr/bin/alsamixer'
 alias brw="brew"
 alias brc="brew cask"
 
+# Interop with pbcopy & pbpaste
+alias pbcopy="reattach-to-user-namespace /usr/bin/pbcopy"
+alias pbpaste="reattach-to-user-namespace /usr/bin/pbpaste"
+
 alias grb="git rebase"
 alias gst="git status"
 alias gco="git checkout"
