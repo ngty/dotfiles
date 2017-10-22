@@ -1,5 +1,6 @@
 alias ls='ls -G'
 alias nv='nvim'
+alias vi='nvim'
 alias bx="bundle exec"
 alias alsamixer='amixer sset Master unmute; /usr/bin/alsamixer'
 
