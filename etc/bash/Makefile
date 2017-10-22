@@ -1,5 +1,5 @@
 PWD=$(shell pwd)
-FILES=bash_logout bash_profile bashrc
+FILES=bash_logout bash_profile bashrc fzf.bash
 
 all: clean setup
 
@@ -14,5 +14,4 @@ setup:
 	done
 
 macos/deps:
-	brew install fzf && \
-		/usr/local/opt/fzf/install
+	brew install fzf
