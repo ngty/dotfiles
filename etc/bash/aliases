@@ -11,6 +11,7 @@ alias brc="brew cask"
 # Interop with pbcopy & pbpaste
 alias pbcopy="reattach-to-user-namespace /usr/bin/pbcopy"
 alias pbpaste="reattach-to-user-namespace /usr/bin/pbpaste"
+alias open="reattach-to-user-namespace /usr/bin/open"
 
 alias grb="git rebase"
 alias gst="git status"
