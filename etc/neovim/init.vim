@@ -23,6 +23,7 @@ Bundle 'NLKNguyen/papercolor-theme'
 
 " Github Repos
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'benekastah/neomake'
 
 " VIM-scripts repos
