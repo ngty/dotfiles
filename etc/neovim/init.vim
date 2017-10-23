@@ -31,12 +31,21 @@ Bundle 'benekastah/neomake'
 " VIM-scripts repos
 Bundle 'rails.vim'
 Bundle 'CSApprox'
-Bundle "EasyMotion"
-Bundle 'L9'
+Bundle 'easymotion/vim-easymotion'
+"Bundle 'L9'
 "Bundle 'FuzzyFinder'
 Bundle 'tComment'
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
+
+" *easymotion* tweaks
+map <Leader> <Plug>(easymotion-prefix)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+let g:EasyMotion_smartcase = 1
 
 "" *FuzzyFinder* tweaks
 ""command Qbf FufBuffer
