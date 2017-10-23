@@ -25,9 +25,6 @@ Bundle 'NLKNguyen/papercolor-theme'
 Bundle 'tpope/vim-fugitive'
 Bundle 'benekastah/neomake'
 
-" Other git repos
-"Bundle 'git://git.wincent.com/command-t.git'
-
 " VIM-scripts repos
 Bundle 'rails.vim'
 Bundle 'CSApprox'
