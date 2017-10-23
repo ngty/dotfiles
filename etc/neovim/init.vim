@@ -38,7 +38,9 @@ Bundle 'tComment'
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
 
-" *easymotion* tweaks
+" *easymotion* tweaks (see https://github.com/easymotion/vim-easymotion)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
 map <Leader> <Plug>(easymotion-prefix)
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
