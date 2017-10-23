@@ -32,8 +32,6 @@ Bundle 'benekastah/neomake'
 Bundle 'rails.vim'
 Bundle 'CSApprox'
 Bundle 'easymotion/vim-easymotion'
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
 Bundle 'tComment'
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
@@ -48,17 +46,6 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 let g:EasyMotion_smartcase = 1
-
-"" *FuzzyFinder* tweaks
-""command Qbf FufBuffer
-""command Qfl FufFile
-""command Qdr FufDir
-""command Qln FufLine
-" noremap <silent> <Leader>b :FufBuffer<CR>
-" noremap <silent> <Leader>f :FufFile<CR>
-" noremap <silent> <Leader>d :FufDir<CR>
-" noremap <silent> <Leader>l :FufLine<CR>
-" noremap <silent> <Leader>t :FufTag<CR>
 
 " Split view navigating
 noremap <silent> <C-K> :wincmd k<CR>
