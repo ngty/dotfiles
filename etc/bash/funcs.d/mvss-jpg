@@ -8,8 +8,8 @@ mvss-jpg(){
   fi
 
   case $newName in
-  *.j*) newPath="$(dirname $lastScreenshot)/${newName}" ;;
-  *) newPath="$(dirname $lastScreenshot)/${newName}.jpg" ;;
+  *.j*) newPath="$(dirname "$lastScreenshot")/${newName}" ;;
+  *) newPath="$(dirname "$lastScreenshot")/${newName}.jpg" ;;
   esac
 
   convert "${lastScreenshot}" -quality 90 "${newPath}"
