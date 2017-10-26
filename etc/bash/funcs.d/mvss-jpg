@@ -1,0 +1,17 @@
+mvss-jpg(){
+  local newPath=""
+  local newName=${1}
+  local lastScreenshot=$( ls -tr ~/Desktop/Screenshots/*.png | tail -n1 )
+
+  if [ "${newName}x" = "x" ]; then
+    echo "USAGE: $ mvss-jpg new_name"
+  fi
+
+  case $newName in
+  *.j*) newPath="$(dirname $lastScreenshot)/${newName}" ;;
+  *) newPath="$(dirname $lastScreenshot)/${newName}.jpg" ;;
+  esac
+
+  convert "${lastScreenshot}" -quality 90 "${newPath}"
+  echo "${newPath}"
+}
