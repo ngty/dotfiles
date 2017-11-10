@@ -21,6 +21,9 @@ Bundle 'gmarik/vundle'
 Bundle 'ngty/Wombat'
 Bundle 'NLKNguyen/papercolor-theme'
 
+" Linting
+Bundle "w0rp/ale"
+
 " Github Repos
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
