@@ -58,7 +58,7 @@ noremap <silent> <C-L> :wincmd l<CR>
 syntax enable
 syntax on
 "colorscheme wombat
-set background=light
+set background=dark
 set t_Co=256
 set number
 set laststatus=2
