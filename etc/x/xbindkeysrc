@@ -77,6 +77,18 @@
   m:0x40 + c:107
   Mod4 + Print
 
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  m:0x0 + c:121
+  XF86AudioMute
+
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+  m:0x0 + c:122
+  XF86AudioLowerVolume
+
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+  m:0x0 + c:123
+  XF86AudioRaiseVolume
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
