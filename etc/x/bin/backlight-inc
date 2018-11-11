@@ -1,0 +1,14 @@
+#!/bin/bash
+
+MAX_FILE=/sys/class/backlight/intel_backlight/max_brightness
+FILE=/sys/class/backlight/intel_backlight/brightness
+MAX=$( cat $MAX_FILE | xargs )
+OLD=$( cat $FILE | xargs )
+NEW=$(( $OLD + 10 ))
+
+if [ $NEW -gt $MAX ]; then
+  NEW=$MAX
+fi
+
+#echo $OLD $NEW
+echo $NEW > $FILE

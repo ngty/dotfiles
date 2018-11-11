@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FILE=/sys/class/backlight/intel_backlight/brightness
+OLD=$( cat $FILE | xargs )
+NEW=$(( $OLD - 10 ))
+
+if [ $NEW -lt 0 ]; then
+  NEW=0
+fi
+
+#echo $OLD $NEW
+echo $NEW > $FILE
