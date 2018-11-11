@@ -1,4 +1,4 @@
-alias ls='ls -G'
+alias ls='ls -G --color=auto'
 #alias nv='nvim'
 #alias vi='/usr/local/bin/vim'
 #alias vim='/usr/local/bin/vim'
