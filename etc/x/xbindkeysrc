@@ -73,6 +73,9 @@
   m:0x0 + c:233
   XF86MonBrightnessUp
 
+"~/etc/x/bin/screenshot"
+  m:0x40 + c:107
+  Mod4 + Print
 
 ##################################
 # End of xbindkeys configuration #

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DIR=~/pics/screenshots
+NAME=$( date +%Y%m%d%H%M%S ).png
+
+import $DIR/$NAME
+eog $DIR/$NAME
