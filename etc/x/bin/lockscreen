@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ME=${BASH_SOURCE[0]}
+ME=$([ -h $ME ] && echo $(readlink $ME) || echo $ME)
+DIR=$(dirname $ME)
+
+i3lock -i $DIR/../share/wallpaper.jpg
