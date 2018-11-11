@@ -1,5 +1,5 @@
 PWD=$(shell pwd)
-FILES=Xdefaults xinitrc Xresources xsession
+FILES=Xdefaults xinitrc Xresources xsession xbindkeysrc
 
 all: clean setup
 
