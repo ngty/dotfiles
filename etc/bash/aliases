@@ -10,8 +10,10 @@ alias brw="brew"
 alias brc="brew cask"
 
 # Interop with pbcopy & pbpaste
-alias pbcopy="reattach-to-user-namespace /usr/bin/pbcopy"
-alias pbpaste="reattach-to-user-namespace /usr/bin/pbpaste"
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+# alias pbcopy="reattach-to-user-namespace /usr/bin/pbcopy"
+# alias pbpaste="reattach-to-user-namespace /usr/bin/pbpaste"
 alias open="reattach-to-user-namespace /usr/bin/open"
 
 alias grb="git rebase"
