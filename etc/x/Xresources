@@ -8,3 +8,6 @@ URxvt.keysym.C-minus:       perl:font-size:decrease
 !URxvt.keysym.M-s:           perl:keyboard-select:search
 !URxvt.keysym.C-S-Up:        perl:font-size:incglobal
 !URxvt.keysym.C-S-Down:      perl:font-size:decglobal
+
+rofi.font:   mono 25
+rofi.width:  1200
