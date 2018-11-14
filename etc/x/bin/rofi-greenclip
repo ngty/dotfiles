@@ -1,2 +1,11 @@
 #!/bin/bash
+
 rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+sleep 0.5
+
+TEXT="$( xclip -o -selection clipboard )"
+
+if [ "${TEXT}x" != "x" ]; then
+  xdotool type "$TEXT"
+  echo "" | xclip -selection clipboard
+fi
