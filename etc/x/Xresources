@@ -10,4 +10,4 @@ URxvt.keysym.C-minus:       perl:font-size:decrease
 !URxvt.keysym.C-S-Down:      perl:font-size:decglobal
 
 rofi.font:   mono 25
-rofi.width:  1200
+rofi.width:  1500
