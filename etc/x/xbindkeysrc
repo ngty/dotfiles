@@ -73,11 +73,11 @@
   m:0x0 + c:233
   XF86MonBrightnessUp
 
-"~/etc/x/bin/screenshot"
+"~/etc/x/bin/rofi-greenclip"
   m:0x40 + c:107
   Mod4 + Print
 
-"~/etc/x/bin/rofi-greenclip"
+"~/etc/x/bin/screenshot"
   m:0x41 + c:107
   Shift+Mod4 + Print
 
