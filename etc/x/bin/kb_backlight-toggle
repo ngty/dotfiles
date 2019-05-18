@@ -1,0 +1,17 @@
+#!/bin/bash
+
+FILE=/sys/class/leds/tpacpi::kbd_backlight/brightness
+OLD=$( sudo sh -c "cat $FILE" | xargs )
+#OLD=$( cat $FILE | xargs )
+
+if [ $OLD -eq 0 ]; then
+  NEW=1
+else
+  NEW=0
+fi
+
+# echo $MAX $OLD $NEW
+
+#echo $OLD $NEW
+#echo $NEW > $FILE
+sudo sh -c "echo $NEW > $FILE"
