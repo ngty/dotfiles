@@ -38,10 +38,7 @@ feh --bg-fill $DIR/share/wallpaper.jpg
 
 ## Disables all beep
 #xset b off
-#
-## Start conky
-#conky --daemonize
-#
+
 ## Fake WM
 #wmname LG3D
 
@@ -52,7 +49,11 @@ xbindkeys --poll-rc
 xss-lock -- $DIR/bin/lockscreen &
 
 # Disable touchpad (see $ xinput list)
-xinput set-prop 11 "Device Enabled" 0
+#xinput set-prop 11 "Device Enabled" 0
+/usr/bin/synclient TouchpadOff=1
+
+# Start Conky
+conky --config ~/etc/conky/current --daemonize
 
 # Start windows manager
 exec i3
