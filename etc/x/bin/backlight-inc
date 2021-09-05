@@ -11,4 +11,4 @@ if [ $NEW -gt $MAX ]; then
 fi
 
 #echo $OLD $NEW
-echo $NEW > $FILE
+brightnessctl set $NEW

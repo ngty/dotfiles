@@ -9,4 +9,4 @@ if [ $NEW -lt 0 ]; then
 fi
 
 #echo $OLD $NEW
-echo $NEW > $FILE
+brightnessctl set $NEW
