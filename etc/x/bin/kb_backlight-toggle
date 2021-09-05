@@ -1,17 +1,19 @@
 #!/bin/bash
 
 FILE=/sys/class/leds/tpacpi::kbd_backlight/brightness
-OLD=$( sudo sh -c "cat $FILE" | xargs )
+OLD=$( brightnessctl --device='tpacpi::kbd_backlight' info | grep 'Current brightness' | awk '{print $3}' | xargs )
 #OLD=$( cat $FILE | xargs )
 
 if [ $OLD -eq 0 ]; then
   NEW=1
+elif [ $OLD -eq 1 ]; then
+  NEW=2
 else
   NEW=0
 fi
 
-# echo $MAX $OLD $NEW
-
+#echo $MAX $OLD $NEW
 #echo $OLD $NEW
 #echo $NEW > $FILE
-sudo sh -c "echo $NEW > $FILE"
+
+brightnessctl --device='tpacpi::kbd_backlight' set $NEW
