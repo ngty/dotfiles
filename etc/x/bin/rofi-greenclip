@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -font 'mono 20'
 sleep 0.5
 
 TEXT="$( xclip -o -selection clipboard )"

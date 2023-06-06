@@ -57,6 +57,7 @@ conky --config ~/etc/conky/current --daemonize
 
 # Start windows manager
 exec i3
+#exec xfdesktop
 #exec ~/bin/gen/dwm
 # exec gnome-session
 # exec startkde

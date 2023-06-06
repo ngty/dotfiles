@@ -4,6 +4,9 @@ export EDITOR=vim
 #export PATH=$HOME/.jenv/bin:$PATH
 #eval "$(jenv init -)"
 
+# Nodejs
+export N_PREFIX=$HOME/Library
+
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle
@@ -12,15 +15,17 @@ export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 # Ham
 export HAM_HOME="$HOME/work/public/ham"
-export PATH="${PATH}:$HAM_HOME/bin"
+export PATH=${PATH}:$HAM_HOME/bin
 
 # Rubies
 #export RUBIES=($(find /opt/rubies -maxdepth 1 -mindepth 1))
 
 # PATH !!
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/Library/bin:$PATH
+export PATH=$HOME/bin:${PATH}
+export PATH=./node_modules/.bin:$PATH
 #export PATH=./node_modules/.bin:$PATH
 #export PATH=~/bin:$PATH
 #export PATH=./vendor/bin:$PATH
-#export PATH=./bin:$PATH
-
+export PATH=./bin:$PATH

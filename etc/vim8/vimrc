@@ -25,9 +25,12 @@ Bundle 'NLKNguyen/papercolor-theme'
 Bundle "w0rp/ale"
 
 " Github Repos
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'airblade/vim-gitgutter'
 "Bundle 'benekastah/neomake'
+
+" Markdown
+Bundle 'suan/vim-instant-markdown'
 
 " VIM-scripts repos
 Bundle 'rails.vim'
@@ -36,6 +39,24 @@ Bundle 'easymotion/vim-easymotion'
 Bundle 'tComment'
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
+
+" Terraform
+Bundle 'hashivim/vim-terraform'
+
+" Typescript
+" https://github.com/leafgarland/typescript-vim
+" Bundle 'leafgarland/typescript-vim'
+Bundle 'leafgarland/typescript-vim'
+" https://github.com/Quramy/tsuquyomi
+" Bundle 'Quramy/tsuquyomi'
+
+" let g:typescript_compiler_binary = 'tsc'
+" let g:typescript_compiler_options = ''
+"
+" autocmd FileType typescript :set makeprg=tsc
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 " *easymotion* tweaks (see https://github.com/easymotion/vim-easymotion)
 map  / <Plug>(easymotion-sn)

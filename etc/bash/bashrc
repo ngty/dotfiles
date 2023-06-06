@@ -11,6 +11,10 @@ complete -cf sudo
 # Prefer vi mode
 set -o vi
 
+# Disable beep
+set b off
+xset b off
+
 # Better manage local friends
 me=${BASH_SOURCE[0]}
 me=$([ -h $me ] && echo $(readlink $me) || echo $me)
@@ -26,10 +30,10 @@ done
 
 #[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 #
-## Chruby
-#source /usr/local/share/chruby/chruby.sh
-#source /usr/local/share/chruby/auto.sh
-#
-## Nvm
-#export NVM_DIR="$HOME/.nvm"
-#source "/usr/local/opt/nvm/nvm.sh"
+# Chruby
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
+
+# # Nvm
+# export NVM_DIR="$HOME/.nvm"
+# source "/usr/local/opt/nvm/nvm.sh"

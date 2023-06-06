@@ -3,15 +3,17 @@
 extract() {
   if [ "$1" = "+" ]; then
     for l in $(
-      acpi -b | \
+      acpi -b | grep -v Unknown | \
         awk '{gsub(",",""); print $4 "(+" $5}' | \
-          awk -F: '{print $1 ":" $2 ")"}'
+          awk -F: '{print $1 ")"}'
+          #awk -F: '{print $1 ":" $2 ")"}'
               ); do echo -n $l; done
   else
     for l in $(
-      acpi -b | \
+      acpi -b | grep -v Unknown | \
         awk '{gsub(",",""); print $4 "(-" $5}' | \
-          awk -F: '{print $1 ":" $2 ")"}'
+          awk -F: '{print $1 ")"}'
+          #awk -F: '{print $1 ":" $2 ")"}'
                 ); do echo -n $l; done
   fi
 }
