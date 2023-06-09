@@ -1,88 +1,53 @@
-# Conky, a system monitor, based on torsmo
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	color2 = '2ECC71',
+	color3 = 'DED836',
+	cpu_avg_samples = 2,
+	default_color = 'FFFFFF',
+	double_buffer = true,
+	font = 'Bitstream Vera Sans:size=12',
+	gap_x = 25,
+	gap_y = 13,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1.0,
+	use_xft = true,
+}
+conky.text = [[
+${voffset 8}$color2${font Bitstream Vera Sans:size=22}${time %A}$font\
+${voffset -8}$alignr$color${font Bitstream Vera Sans:size=38}${time %e}$font
+$color${voffset -30}$color${font Bitstream Vera Sans:size=18}${time %b}$font
+${voffset -3} $color${font Bitstream Vera Sans:size=20}${time %Y}$font$color2$hr
+${voffset -3}$alignr$color${font Bitstream Vera Sans:size=14}${time %T}$font
 #
-# Any original torsmo code is licensed under the BSD license
+${voffset 25}${goto 40}${color}CPU${font Bitstream Vera Sans:bold:size=12}$alignr$cpu%
+${voffset 5}${goto 40}$font$color2${top name 1}$alignr$color${top cpu 1}%
+${goto 40}$color2${top name 2}$alignr$color${top cpu 2}%
+${goto 40}$color2${top name 3}$alignr$color${top cpu 3}%
+${goto 40}$color2${top name 4}$alignr$color${top cpu 4}%
+${goto 40}$color2${top name 5}$alignr$color${top cpu 5}%
 #
-# All code written since the fork of torsmo is licensed under the GPL
+${voffset 25}${goto 40}${color}RAM${font Bitstream Vera Sans:bold:size=12}$alignr$mem$font
+${goto 40}${voffset 5}$color2${top_mem name 1}$alignr$color${top_mem mem_res 1}
+${goto 40}$color2${top_mem name 2}$alignr$color${top_mem mem_res 2}
+${goto 40}$color2${top_mem name 3}$alignr$color${top_mem mem_res 3}
+${goto 40}$color2${top_mem name 4}$alignr$color${top_mem mem_res 4}
+${goto 40}$color2${top_mem name 5}$alignr$color${top_mem mem_res 5}
 #
-# Please see COPYING for details
+${voffset 20}${goto 40}${color}Swap${font Bitstream Vera Sans:bold:size=12}$alignr${swap}/ ${swapfree}$font
 #
-# Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
-# Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
-# All rights reserved.
+${voffset 25}${color}BATTERY${font Bitstream Vera Sans:bold:size=12}$font
+${voffset -8}$alignr$color${font Bitstream Vera Sans:size=38}${battery_percent}%$font
+${voffset -40}$color3${font Bitstream Vera Sans:bold:size=12}${acpiacadapter}$font$color
+${font Bitstream Vera Sans:size=18}$color ${battery_time}$font$color
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-
-alignment top_left
-background yes
-border_width 1
-cpu_avg_samples 2
-default_color black
-default_outline_color black
-default_shade_color black
-draw_borders no
-draw_graph_borders yes
-draw_outline no
-draw_shades no
-use_xft yes
-xftfont UbuntuMono:size=18
-gap_x 25
-gap_y 35
-minimum_size 5 5
-#maximum_width 1500
-net_avg_samples 2
-no_buffers yes
-out_to_console no
-out_to_stderr no
-extra_newline no
-own_window yes
-own_window_class Conky
-own_window_type override
-own_window_transparent yes
-stippled_borders 0
-update_interval 1.0
-uppercase no
-use_spacer none
-show_graph_scale no
-show_graph_range no
-
-TEXT
-Uptime: $uptime
-Temperature (C): ${acpitemp}
-CPU Usage: $cpu%
-Frequencies (GHz): ${freq_g 1} / ${freq_g 2} / ${freq_g 3} / ${freq_g 4}
-RAM Usage: $mem of $memmax ($memperc%)
-Disk IO: read:$diskio_read / write:$diskio_write
-Processes: $processes / Running: $running_processes
-
-Power:
-* adapter: $acpiacadapter
-* battery: $battery_percent% ($battery_time)
-
-Filesystems:
-* sda: ${fs_used /} of ${fs_size /} (${fs_used_perc /}%)
-
-Networking:
-* wlp3s0 (${addr wlp3s0}): up:${upspeed wlp3s0} / down:${downspeed wlp3s0}
-* enp0s25 (${addr enp0s25}): up:${upspeed enp0s25} / down:${downspeed enp0s25}
-
-TOP Processes      PID     CPU%   MEM%   IO%    TIME
-* ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1} ${top io_perc 1} ${top time 1}
-* ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2} ${top io_perc 2} ${top time 2}
-* ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3} ${top io_perc 3} ${top time 3}
-* ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4} ${top io_perc 4} ${top time 4}
-* ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5} ${top io_perc 5} ${top time 5}
-* ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6} ${top io_perc 6} ${top time 6}
-* ${top name 7} ${top pid 7} ${top cpu 7} ${top mem 7} ${top io_perc 7} ${top time 7}
-* ${top name 8} ${top pid 8} ${top cpu 8} ${top mem 8} ${top io_perc 8} ${top time 8}
-* ${top name 9} ${top pid 9} ${top cpu 9} ${top mem 9} ${top io_perc 9} ${top time 9}
+${voffset 25}$font$alignr${execi 10000 awk -F= '/TION/ {print $2}' /etc/lsb-release |sed 's/"//g'} \
+${execi 10000 awk -F= '/EASE=/ {printf $2" "} /NAME/ {print $2}' /etc/lsb-release}
+${voffset 10}${color2}${alignr}${execi 1200 whoami}@${nodename}
+${alignr}${color2}${font Bitstream Vera Sans:size=12}uptime: ${color}${uptime_short}
+${voffset 5}${color2}${font Bitstream Vera Sans:size=12}${alignr}kernel: ${color}${kernel}
+]]
