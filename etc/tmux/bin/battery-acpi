@@ -5,16 +5,14 @@ extract() {
     for l in $(
       acpi -b | grep -v Unknown | \
         awk '{gsub(",",""); print $4 "(+" $5}' | \
-          awk -F: '{print $1 ")"}'
-          #awk -F: '{print $1 ":" $2 ")"}'
-              ); do echo -n $l; done
+        awk -F: '{print $1 ":" $2 ")"}'
+      ); do echo -n $l; done
   else
     for l in $(
       acpi -b | grep -v Unknown | \
         awk '{gsub(",",""); print $4 "(-" $5}' | \
-          awk -F: '{print $1 ")"}'
-          #awk -F: '{print $1 ":" $2 ")"}'
-                ); do echo -n $l; done
+        awk -F: '{print $1 ":" $2 ")"}'
+      ); do echo -n $l; done
   fi
 }
  
