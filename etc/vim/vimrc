@@ -18,16 +18,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Theming Repos
-Bundle 'ngty/Wombat'
 Bundle 'NLKNguyen/papercolor-theme'
 
 " Linting
-Bundle "w0rp/ale"
+Bundle 'dense-analysis/ale'
 
 " Github Repos
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'airblade/vim-gitgutter'
-"Bundle 'benekastah/neomake'
+Bundle "tpope/vim-fugitive"
 
 " Markdown
 Bundle 'suan/vim-instant-markdown'
@@ -178,5 +175,9 @@ set undoreload=10000
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+" Linting
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " __END__
