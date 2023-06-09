@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#WINDOW_ID=$( xdotool getactivewindow )
+#BEFORE="$( xclip -o -selection clipboard )"
+
+rofi -modi "clipboard:greenclip print" -show clipboard -theme DarkBlue -font 'mono 16' -width 1500 -run-command '{cmd}'
+
+#rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -font 'mono 20'
+sleep 0.5
+
+TEXT="$( xclip -o -selection clipboard )"
+
+
+#greenclip print
+#coproc (xdotool key --clearmodifiers "ctrl+v" &)
+#coproc ( xdotool key Ctrl+v & )
+
+#
+if [ "${TEXT}x" != "x" ]; then
+  #xdotool windowactivate --sync $WINDOW_ID
+  #xdotool type "${TEXT}"
+  xdotool key --clearmodifiers Shift+Insert
+  echo "" | xclip -selection clipboard
+  #xdotool key --clearmodifiers Shift+Insert
+  #xdotool key Shift+Insert
+  #xdotool type "${AFTER}"
+  #greenclip print
+  #coproc ( xdotool key --clearmodifiers "ctrl+v" & )
+  # echo "" | xclip -selection clipboard
+  #xdotool type "$TEXT"
+fi

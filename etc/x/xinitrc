@@ -6,6 +6,7 @@
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
+#userxbinkeys=$HOME/.xbindkeysrc
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -28,6 +29,10 @@ fi
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
+
+# if [ -f "$userxbinkeys" ]; then
+#     xbindkeys --poll-rc
+# fi
 
 # start some nice programs
 
@@ -63,7 +68,9 @@ get_session(){
 	echo "dbus-launch ${dbus_args[*]}"
 }
 
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
+#autocutsel -fork &
+#autocutsel -selection PRIMARY -fork &
+pulseaudio -D &
+#greenclip daemon &
 
 exec $(get_session "$1")

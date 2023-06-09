@@ -3,7 +3,7 @@
 # xbindkeys configuration #
 ###########################
 #
-# Version: 1.8.6
+# Version: 1.8.7
 #
 # If you edit this file, do not forget to uncomment any lines
 # that you change.
@@ -41,14 +41,36 @@
 
 # "xbindkeys_show" 
 #   control+shift + q
-#
-# # set directly keycode (here control + f with my keyboard)
+
+# set directly keycode (here control + f with my keyboard)
 # "xterm"
 #   c:41 + m:0x4
-#
-# # specify a mouse button
+
+# specify a mouse button
 # "xterm"
 #   control + b:2
+
+"~/etc/x/bin/screenshot"
+  m:0x41 + c:107
+  Shift+Mod4 + Print
+
+"~/etc/x/bin/greenclip-prompt"
+  m:0x40 + c:107
+  Mod4 + Print
+
+"~/etc/x/bin/kb_backlight-toggle"
+  m:0x41 + c:224
+  Shift+Mod4 + XF86Messenger
+
+#"~/etc/x/bin/audio-in-toggle"
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  m:0x0 + c:198
+  XF86AudioMicMute
+
+#~/etc/x/bin/audio-out-toggle"
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  m:0x0 + c:121
+  XF86AudioMute
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
@@ -64,38 +86,6 @@
 ## Control + mouse button 2 release event starts rxvt
 #"rxvt"
 #  Control + b:2 + Release
-
-"~/etc/x/bin/backlight-dec"
-  m:0x0 + c:232
-  XF86MonBrightnessDown
-
-"~/etc/x/bin/backlight-inc"
-  m:0x0 + c:233
-  XF86MonBrightnessUp
-
-"~/etc/x/bin/rofi-greenclip"
-  m:0x40 + c:107
-  Mod4 + Print
-
-"~/etc/x/bin/screenshot"
-  m:0x41 + c:107
-  Shift+Mod4 + Print
-
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
-  m:0x0 + c:121
-  XF86AudioMute
-
-"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-  m:0x0 + c:198
-  XF86AudioMicMute
-
-"pactl set-sink-volume @DEFAULT_SINK@ -1000"
-  m:0x0 + c:122
-  XF86AudioLowerVolume
-
-"pactl set-sink-volume @DEFAULT_SINK@ +1000"
-  m:0x0 + c:123
-  XF86AudioRaiseVolume
 
 ##################################
 # End of xbindkeys configuration #

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=~/pics/screenshots
+DIR=~/Pictures/Screenshots
 NAME=$( date +%Y%m%d%H%M%S ).png
 
 import $DIR/$NAME
