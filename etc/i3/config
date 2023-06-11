@@ -61,11 +61,6 @@ exec --no-startup-id xbindkeys --poll-rc
 exec --no-startup-id ~/etc/x/bin/autocutsel-fix
 
 ################################################################################################
-## screenlock locking
-################################################################################################
-exec --no-startup-id ~/etc/x/bin/set-lock-on-suspend
-
-################################################################################################
 
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec "xbacklight -inc 100; notify-send 'brightness up'"
