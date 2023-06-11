@@ -61,6 +61,11 @@ exec --no-startup-id xbindkeys --poll-rc
 exec --no-startup-id ~/etc/x/bin/autocutsel-fix
 
 ################################################################################################
+## screenlock locking
+################################################################################################
+exec --no-startup-id ~/etc/x/bin/set-lock-on-suspend
+
+################################################################################################
 
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec "xbacklight -inc 100; notify-send 'brightness up'"
@@ -323,7 +328,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+BackSpace exec --no-startup-id blurlock
+bindsym $mod+BackSpace exec --no-startup-id ~/etc/x/bin/lockscreen
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -337,7 +342,8 @@ exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id sbxkb
 #exec --no-startup-id start_conky_maia
 exec --no-startup-id conky
-exec --no-startup-id xautolock -time 10 -locker blurlock
+#exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 10 -locker 'sh ~/etc/x/bin/lockscreen'
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
