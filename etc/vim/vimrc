@@ -44,8 +44,17 @@ Bundle 'hashivim/vim-terraform'
 " https://github.com/leafgarland/typescript-vim
 " Bundle 'leafgarland/typescript-vim'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'maxmellon/vim-jsx-pretty'
+Bundle 'neoclide/coc.nvim'
+
+let g:coc_global_extensions = ['coc-tsserver']
+
 " https://github.com/Quramy/tsuquyomi
 " Bundle 'Quramy/tsuquyomi'
+
+" GraphQL
+Bundle 'jparise/vim-graphql'
 
 " let g:typescript_compiler_binary = 'tsc'
 " let g:typescript_compiler_options = ''
