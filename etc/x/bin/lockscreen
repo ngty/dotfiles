@@ -4,4 +4,6 @@ ME=${BASH_SOURCE[0]}
 ME=$([ -h $ME ] && echo $(readlink $ME) || echo $ME)
 DIR=$(dirname $ME)
 
-i3lock -i $DIR/../share/wallpaper.jpg
+convert -blur 0x8 \
+  $DIR/../share/wallpaper.jpg RGB:- | \
+  i3lock --raw 1920x1080:rgb --image /dev/stdin 2>&1
