@@ -20,6 +20,9 @@ Bundle 'gmarik/vundle'
 " Theming Repos
 Bundle 'NLKNguyen/papercolor-theme'
 
+" NerdTree
+Bundle 'preservim/nerdtree'
+
 " Linting
 Bundle 'dense-analysis/ale'
 
@@ -27,7 +30,7 @@ Bundle 'dense-analysis/ale'
 Bundle "tpope/vim-fugitive"
 
 " Markdown
-Bundle 'suan/vim-instant-markdown'
+" Bundle 'suan/vim-instant-markdown'
 
 " VIM-scripts repos
 Bundle 'rails.vim'
@@ -46,9 +49,9 @@ Bundle 'hashivim/vim-terraform'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maxmellon/vim-jsx-pretty'
-Bundle 'neoclide/coc.nvim'
+"Bundle 'neoclide/coc.nvim'
 
-let g:coc_global_extensions = ['coc-tsserver']
+"let g:coc_global_extensions = ['coc-tsserver']
 
 " https://github.com/Quramy/tsuquyomi
 " Bundle 'Quramy/tsuquyomi'
