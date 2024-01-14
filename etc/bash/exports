@@ -14,8 +14,8 @@ export EDITOR=vim
 #export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 # Ham
-#export HAM_HOME="$HOME/work/public/ham"
-#export PATH=${PATH}:$HAM_HOME/bin
+export HAM_HOME="$HOME/work/public/ham"
+export PATH=${PATH}:$HAM_HOME/bin
 
 # Rubies
 #export RUBIES=($(find /opt/rubies -maxdepth 1 -mindepth 1))
