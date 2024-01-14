@@ -4,6 +4,20 @@ ME=${BASH_SOURCE[0]}
 ME=$([ -h $ME ] && echo $(readlink $ME) || echo $ME)
 DIR=$(dirname $ME)
 
+# OPTS="--insidecolor=373445ff"
+# OPTS="${OPTS} --ringcolor=ffffffff"
+# OPTS="${OPTS} --line-uses-inside"
+# OPTS="${OPTS} --keyhlcolor=d23c3dff"
+# OPTS="${OPTS} --bshlcolor=d23c3dff"
+# OPTS="${OPTS} --separatorcolor=00000000"
+# OPTS="${OPTS} --insidevercolor=fecf4dff"
+# OPTS="${OPTS} --insidewrongcolor=d23c3dff"
+# OPTS="${OPTS} --ringvercolor=ffffffff"
+# OPTS="${OPTS} --ringwrongcolor=ffffffff"
+# OPTS="${OPTS} --radius=15"
+# OPTS="${OPTS} --veriftext=''"
+# OPTS="${OPTS} --wrongtext=''"
+
 convert -blur 0x8 \
   $DIR/../share/wallpaper.jpg RGB:- | \
   i3lock --raw 1920x1080:rgb --image /dev/stdin 2>&1
