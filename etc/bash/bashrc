@@ -28,5 +28,3 @@ source $dir/prompts
 for f in `ls $dir/funcs.d`; do
   source $dir/funcs.d/$f
 done
-
-source /usr/share/nvm/init-nvm.sh
