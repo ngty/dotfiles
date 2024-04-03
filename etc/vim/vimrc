@@ -12,7 +12,7 @@ filetype off " required!
 filetype plugin indent on " required!
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " Vundle manages itself (required!)
 Bundle 'gmarik/vundle'
@@ -58,6 +58,9 @@ Bundle 'maxmellon/vim-jsx-pretty'
 
 " GraphQL
 Bundle 'jparise/vim-graphql'
+
+" End of init
+call vundle#end()
 
 " let g:typescript_compiler_binary = 'tsc'
 " let g:typescript_compiler_options = ''
