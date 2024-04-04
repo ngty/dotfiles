@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pactl set-sink-volume @DEFAULT_SINK@ +5%
+pactl set-source-volume @DEFAULT_SOURCE@ +5%

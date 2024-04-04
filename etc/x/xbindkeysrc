@@ -58,19 +58,27 @@
   m:0x40 + c:107
   Mod4 + Print
 
-"~/etc/x/bin/kb_backlight-toggle"
-  m:0x41 + c:224
-  Shift+Mod4 + XF86Messenger
+#"~/etc/x/bin/kb_backlight-toggle"
+#  m:0x41 + c:224
+#  Shift+Mod4 + XF86Messenger
 
-#"~/etc/x/bin/audio-in-toggle"
-"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+#"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+"~/etc/x/bin/audio-in-toggle"
   m:0x0 + c:198
   XF86AudioMicMute
 
-#~/etc/x/bin/audio-out-toggle"
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+#"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"~/etc/x/bin/audio-out-toggle"
   m:0x0 + c:121
   XF86AudioMute
+
+"~/etc/x/bin/audio-volume-inc"
+  m:0x0 + c:123
+  XF86AudioRaiseVolume
+
+"~/etc/x/bin/audio-volume-dec"
+  m:0x0 + c:122
+  XF86AudioLowerVolume
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
