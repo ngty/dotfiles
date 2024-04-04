@@ -58,9 +58,17 @@
   m:0x40 + c:107
   Mod4 + Print
 
-#"~/etc/x/bin/kb_backlight-toggle"
-#  m:0x41 + c:224
-#  Shift+Mod4 + XF86Messenger
+"~/etc/x/bin/kb_backlight-toggle"
+  m:0x0 + c:235
+  XF86Display
+
+"brightnessctl set 5%-"
+  m:0x0 + c:232
+  XF86MonBrightnessDown
+
+"brightnessctl set 5%+"
+  m:0x0 + c:233
+  XF86MonBrightnessUp
 
 #"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 "~/etc/x/bin/audio-in-toggle"
