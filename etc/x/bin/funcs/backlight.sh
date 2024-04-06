@@ -9,5 +9,5 @@ backlightUpdate() {
       awk -F'[()]' '{print $2}'
   )
 
-  notifySend "backlight" "Brightnesss ${newVal}"
+  notifySend "backlight" "Screen Brightnesss: ${newVal}"
 }
