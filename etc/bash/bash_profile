@@ -7,3 +7,4 @@ if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 else
   [[ -f ~/.bashrc ]] && . ~/.bashrc
 fi
+. "$HOME/.cargo/env"
