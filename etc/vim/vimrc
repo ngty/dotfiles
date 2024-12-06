@@ -40,6 +40,9 @@ Bundle 'tComment'
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
 
+" Rust
+Bundle "rust-lang/rust.vim"
+
 " Terraform
 Bundle 'hashivim/vim-terraform'
 
