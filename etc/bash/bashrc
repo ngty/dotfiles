@@ -24,8 +24,8 @@ source $dir/bashrc.manjaro
 source $dir/aliases
 source $dir/exports
 source $dir/prompts
+source $dir/tools
 
 for f in `ls $dir/funcs.d`; do
   source $dir/funcs.d/$f
 done
-. "$HOME/.cargo/env"
