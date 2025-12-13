@@ -56,6 +56,9 @@ Bundle 'maxmellon/vim-jsx-pretty'
 
 "let g:coc_global_extensions = ['coc-tsserver']
 
+" Copilot
+"Bundle "github/copilot"
+
 " https://github.com/Quramy/tsuquyomi
 " Bundle 'Quramy/tsuquyomi'
 
