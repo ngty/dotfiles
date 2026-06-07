@@ -8,3 +8,6 @@ else
   [[ -f ~/.bashrc ]] && . ~/.bashrc
 fi
 . "$HOME/.cargo/env"
+
+# Added by swiftly
+. "/home/ty/.local/share/swiftly/env.sh"
