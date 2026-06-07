@@ -101,9 +101,9 @@ set background=dark
 set t_Co=256
 set number
 set laststatus=2
-colorscheme PaperColor
-let g:airline_theme='papercolor'
-let g:lightline = { 'colorscheme': 'PaperColor' }
+colorscheme evening
+" let g:airline_theme='papercolor'
+" let g:lightline = { 'colorscheme': 'PaperColor' }
 
 " PaperColor specific
 " let g:PaperColor_Theme_Options = {
