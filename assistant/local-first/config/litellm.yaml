@@ -1,0 +1,37 @@
+# local-first/config/litellm.yaml
+model_list:
+  # Primary Secure Tier: High logic, ideal for internal designs & strategy
+  - model_name: local-14b
+    litellm_params:
+      model: openai/qwen2.5-coder:14b
+      api_base: http://ollama:11434/v1
+      api_key: local_bypass
+
+  # Fast Secure Tier: Rapid execution loops & file stream scans
+  - model_name: local-7b
+    litellm_params:
+      model: openai/qwen2.5-coder:7b
+      api_base: http://ollama:11434/v1
+      api_key: local_bypass
+
+  # Remote Escalation: Copilot GPT-4 Engine
+  - model_name: remote-copilot
+    litellm_params:
+      model: github_copilot/gpt-4
+
+  # Remote Escalation: DeepSeek Code Optimization (Your travel savior)
+  - model_name: remote-deepseek
+    litellm_params:
+      model: deepseek/deepseek-chat
+      api_key: os.environ/DEEPSEEK_API_KEY
+
+  # Remote Escalation: Gemini Large Context Reasoning
+  - model_name: remote-gemini
+    litellm_params:
+      model: gemini/gemini-1.5-pro
+      api_key: os.environ/GEMINI_API_KEY
+
+router_settings:
+  routing_strategy: usage-based-routing-v2
+  allowed_fails: 1
+  cooldown_time: 15

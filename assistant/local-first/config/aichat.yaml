@@ -1,0 +1,18 @@
+# ~/.config/aichat/config.yaml
+
+clients:
+  - type: openai-compatible
+    name: litellm-router
+    api_base: http://127.0.0.1:4000/v1
+    api_key: "local-routing-bypass"
+    models:
+      - name: local-14b
+        max_input_tokens: 8192
+      - name: local-7b
+        max_input_tokens: 4096
+      - name: remote-copilot
+        max_input_tokens: 4096
+      - name: remote-deepseek
+        max_input_tokens: 8192
+      - name: remote-gemini
+        max_input_tokens: 16384

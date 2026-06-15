@@ -1,0 +1,42 @@
+# local-first/docker-compose.yml
+services:
+  ollama:
+    # Fully dynamic composition string: repo + tag + checksum
+    image: ${OLLAMA_REPO}:${OLLAMA_TAG}@sha256:${OLLAMA_SHA}
+    container_name: devsecops-ollama
+    volumes:
+      - ollama_storage:/root/.ollama
+    deploy:
+      resources:
+        limits:
+          memory: 16g # CPU inference safety guardrail
+    networks:
+      - ai-isolated-net
+    restart: unless-stopped
+
+  litellm:
+    # Fully dynamic composition string: repo + tag + checksum
+    image: ${LITELLM_REPO}:${LITELLM_TAG}@sha256:${LITELLM_SHA}
+    container_name: devsecops-router
+    ports:
+      - "127.0.0.1:4000:4000" # Strict local loopback isolation
+    volumes:
+      - ./config/litellm.yaml:/app/config.yaml
+      - ./copilot_tokens:/root/.config/litellm/github_copilot
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - GITHUB_COPILOT_TOKEN_DIR=/root/.config/litellm/github_copilot
+    command: ["--config", "/app/config.yaml", "--port", "4000"]
+    depends_on:
+      - ollama
+    networks:
+      - ai-isolated-net
+    restart: unless-stopped
+
+networks:
+  ai-isolated-net:
+    driver: bridge
+
+volumes:
+  ollama_storage:
