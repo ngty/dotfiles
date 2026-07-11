@@ -1,4 +1,4 @@
-FROM ghcr.io/hmbown/codewhale:v0.8.47
+FROM ghcr.io/hmbown/codewhale:v0.8.66
 
 # Switch to root temporarily to configure network utilities and permissions
 USER root

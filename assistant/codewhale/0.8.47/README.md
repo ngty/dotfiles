@@ -1,6 +1,6 @@
 # CodeWhale Hardened Workspace
 
-Hardened Docker workspace for [CodeWhale](https://github.com/hmbown/codewhale) v0.8.47 — a containerized AI coding agent with network isolation, user remapping, and terminal TUI execution.
+Hardened Docker workspace for [CodeWhale](https://github.com/hmbown/codewhale) v0.8.66 — a containerized AI coding agent with network isolation, user remapping, and terminal TUI execution.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ Hardened Docker workspace for [CodeWhale](https://github.com/hmbown/codewhale) v
 ./build.sh
 ```
 
-The image is tagged `local/codewhale:v0.8.47-hardened` and extends `ghcr.io/hmbown/codewhale:v0.8.47`.
+The image is tagged `local/codewhale:v0.8.66-hardened` and extends `ghcr.io/hmbown/codewhale:v0.8.66`.
 
 ## Run
 

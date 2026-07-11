@@ -4,8 +4,8 @@
 
 This is a hardened Docker workspace for running AI coding agents inside a security-constrained container. It builds on the CodeWhale base image and adds network isolation, user remapping, and sandbox enforcement at runtime.
 
-- **Base image**: `ghcr.io/hmbown/codewhale:v0.8.47`
-- **Local tag**: `local/codewhale:v0.8.47-hardened`
+- **Base image**: `ghcr.io/hmbown/codewhale:v0.8.66`
+- **Local tag**: `local/codewhale:v0.8.66-hardened`
 - **Entrypoint**: `docker/entrypoint.sh` — runs before any user command, applies hardening
 - **Default command**: launches the agent terminal UI
 - **Agent user**: `codewhale` (inside the container)
@@ -28,7 +28,7 @@ This is a hardened Docker workspace for running AI coding agents inside a securi
 ./build.sh
 
 # Or manually:
-docker build -t local/codewhale:v0.8.47-hardened docker
+docker build -t local/codewhale:v0.8.66-hardened docker
 ```
 
 ## Run Commands

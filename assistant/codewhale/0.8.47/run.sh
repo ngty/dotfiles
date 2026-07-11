@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# CodeWhale (v0.8.47) Consolidated Hardened Workspace Runner
+# CodeWhale (v0.8.66) Consolidated Hardened Workspace Runner
 # Loads environment keys, mounts physical PWD, and applies network drop logic.
 # ==============================================================================
 set -euo pipefail
@@ -89,4 +89,4 @@ docker run --rm -it \
   -e CODEWHALE_TOOLS_DIR="/tmp/${SESSION_DIR}" \
   -v "${PROJECT_ROOT}/sessions/${SESSION_DIR}:/tmp/${SESSION_DIR}" \
   -w /workspace \
-  local/codewhale:v0.8.47-hardened "${cmd_args[@]}"
+  local/codewhale:v0.8.66-hardened "${cmd_args[@]}"
