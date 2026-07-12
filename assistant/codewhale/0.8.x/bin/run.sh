@@ -20,8 +20,8 @@ if [[ -z "${DEEPSEEK_API_KEY:-}" ]]; then
     exit 1
 fi
 
-# 2. Resolve project root (follows symlinks, e.g. ~/bin/deepseek → run.sh)
-PROJECT_ROOT="$(dirname "$(readlink -f "$0")")"
+# 2. Resolve project root (follows symlinks, e.g. ~/bin/deepseek → scripts/deepseek → bin/run.sh)
+PROJECT_ROOT="$(dirname "$(dirname "$(readlink -f "$0")")")"
 
 # 2a. Create per-session tools tracking directory (tools files created on-demand by the agent)
 SESSION_DIR="session-$(date +%Y%m%d-%H%M%S)-$$"
@@ -33,7 +33,7 @@ if [[ -n "${TMUX:-}" ]]; then
     tmux rename-window "DSeek"
     cleanup() {
         tmux rename-window "$original_window"
-        "${PROJECT_ROOT}/consolidate-tools.sh" "${SESSION_DIR}" || true
+        "${PROJECT_ROOT}/bin/consolidate-tools.sh" "${SESSION_DIR}" || true
     }
     trap cleanup EXIT
 fi

@@ -16,9 +16,9 @@ if [[ -z "$SESSION_DIR" ]]; then
     exit 1
 fi
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
-TOOLS_D="${SCRIPT_DIR}/docker/tools.d"
-SESSION_DIR_PATH="${SCRIPT_DIR}/sessions/${SESSION_DIR}"
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
+TOOLS_D="${PROJECT_ROOT}/docker/tools.d"
+SESSION_DIR_PATH="${PROJECT_ROOT}/sessions/${SESSION_DIR}"
 
 mkdir -p "$TOOLS_D"
 
@@ -35,4 +35,4 @@ if [[ $copied -gt 0 ]]; then
     echo "consolidate-tools: copied ${copied} tool script(s) to docker/tools.d/"
 fi
 
-rm -rf "${SCRIPT_DIR}/sessions/${SESSION_DIR}"
+rm -rf "${PROJECT_ROOT}/sessions/${SESSION_DIR}"

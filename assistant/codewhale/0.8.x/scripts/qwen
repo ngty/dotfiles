@@ -2,5 +2,6 @@
 # Launch CodeWhale with Qwen (DashScope) as the active provider.
 # Switch inside the session with: /provider deepseek
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 export CODEWHALE_PROVIDER=openai
-exec "$SCRIPT_DIR/run.sh" "$@"
+exec "$PROJECT_ROOT/bin/run.sh" "$@"
