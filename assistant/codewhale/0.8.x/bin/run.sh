@@ -30,7 +30,7 @@ mkdir -p "${PROJECT_ROOT}/sessions/${SESSION_DIR}"
 # 3. Rename tmux window and restore on exit
 if [[ -n "${TMUX:-}" ]]; then
     original_window=$(tmux display-message -p '#W')
-    tmux rename-window "DSeek"
+    tmux rename-window "CWT"
     cleanup() {
         tmux rename-window "$original_window"
         "${PROJECT_ROOT}/bin/consolidate-tools.sh" "${SESSION_DIR}" || true
