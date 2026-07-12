@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Launch CodeWhale with DeepSeek as the active provider.
+# Switch inside the session with: /provider openai
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+export CODEWHALE_PROVIDER=deepseek
+exec "$SCRIPT_DIR/run.sh" "$@"

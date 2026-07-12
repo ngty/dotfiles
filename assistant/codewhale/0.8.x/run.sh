@@ -5,13 +5,13 @@
 # ==============================================================================
 set -euo pipefail
 
-# 1. Load Local DeepSeek Credentials
-ENV_FILE="${HOME}/.deepseek/env"
+# 1. Load Local Credentials
+ENV_FILE="${HOME}/.config/codewhale/env"
 if [[ -f "$ENV_FILE" ]]; then
     # shellcheck disable=SC1090
     source "$ENV_FILE"
 else
-    echo "❌ Error: Identity configuration file not found at ${ENV_FILE}" >&2
+    echo "❌ Error: config file not found at ${ENV_FILE}" >&2
     exit 1
 fi
 
@@ -80,6 +80,9 @@ docker run --rm -it \
   --network bridge \
   --cap-add=NET_ADMIN \
   -e DEEPSEEK_API_KEY="$DEEPSEEK_API_KEY" \
+  -e OPENAI_API_KEY="${DASHSCOPE_API_KEY:-}" \
+  -e OPENAI_BASE_URL="${DASHSCOPE_BASE_URL:-}" \
+  -e CODEWHALE_PROVIDER="${CODEWHALE_PROVIDER:-}" \
   -e DEEPSEEK_SANDBOX_MODE="workspace-write" \
   -e CODEWHALE_EXECPOLICY="strict" \
   --dns 1.1.1.1 \
