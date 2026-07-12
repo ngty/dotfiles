@@ -91,6 +91,7 @@ docker run --rm -it \
   --dns 8.8.8.8 \
   -v "${VOLUME_NAME}:/home/codewhale/.codewhale" \
   -v "${TARGET_DIR}:/workspace" \
+  $( [ -d "${HOME}/.config/codewhale/skills" ] && echo "-v ${HOME}/.config/codewhale/skills:/home/codewhale/.agents/skills:ro" ) \
   -e CODEWHALE_TOOLS_DIR="/tmp/${SESSION_DIR}" \
   -v "${PROJECT_ROOT}/sessions/${SESSION_DIR}:/tmp/${SESSION_DIR}" \
   -w /workspace \
