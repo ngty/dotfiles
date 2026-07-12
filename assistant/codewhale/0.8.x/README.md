@@ -5,36 +5,51 @@ Hardened Docker workspace for [CodeWhale](https://github.com/hmbown/codewhale) v
 ## Prerequisites
 
 - Docker (with BuildKit support)
-- A [DeepSeek API key](https://platform.deepseek.com/) set in `~/.deepseek/env`:
+- API credentials in `~/.config/codewhale/env`:
   ```sh
+  # DeepSeek
   export DEEPSEEK_API_KEY="sk-..."
+  # export DEEPSEEK_OPENAI_URL=...       # (builtin)
+  # export DEEPSEEK_ANTHROPIC_URL=...    # (builtin)
+
+  # DashScope (Qwen)
+  export DASHSCOPE_API_KEY="sk-..."
+  export DASHSCOPE_OPENAI_URL="https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+  export DASHSCOPE_ANTHROPIC_URL="https://dashscope-intl.aliyuncs.com/apps/anthropic"
   ```
 
 ## Quick Start
 
 ```sh
 # Build the hardened image
-./build.sh
+./bin/build.sh
 
-# Launch a CodeWhale TUI session in the current directory
-./run.sh
+# Launch with DeepSeek (default)
+./bin/run.sh
+
+# Or launch with a specific provider
+./scripts/deepseek          # DeepSeek
+./scripts/qwen              # Qwen via DashScope
 ```
+
+> Tip: symlink `scripts/qwen` and `scripts/deepseek` into your `PATH` (e.g. `~/bin/`)
+> to launch with `qwen` / `deepseek` from anywhere.
 
 ## Build
 
-`build.sh` removes any prior image and volume, then builds the hardened Docker image:
+`bin/build.sh` removes any prior image and volume, then builds the hardened Docker image:
 
 ```sh
-./build.sh
+./bin/build.sh
 ```
 
 The image is tagged `local/codewhale:v0.8.66-hardened` and extends `ghcr.io/hmbown/codewhale:v0.8.66`.
 
 ## Run
 
-`run.sh` handles the full lifecycle:
+`bin/run.sh` handles the full lifecycle:
 
-1. Loads your DeepSeek API key from `~/.deepseek/env`
+1. Loads API credentials from `~/.config/codewhale/env`
 2. Parses the workspace path and container command (split on `--`)
 3. Creates a persistent volume for CodeWhale state (`codewhale-home`)
 4. Launches the container with network admin capabilities and workspace mount
@@ -42,21 +57,32 @@ The image is tagged `local/codewhale:v0.8.66-hardened` and extends `ghcr.io/hmbo
 `--` separates the workspace path (before) from the container command (after).
 
 ```sh
-./run.sh                          # Launch TUI in current directory
-./run.sh -- bash                  # Drop into a shell in current directory
-./run.sh /path/to/project         # Launch TUI in specified directory
-./run.sh /path/to/project -- bash # Shell in specified directory
-./run.sh -- codewhale --help      # Pass arguments to codewhale CLI
+./bin/run.sh                          # Launch TUI in current directory
+./bin/run.sh -- bash                  # Drop into a shell in current directory
+./bin/run.sh /path/to/project         # Launch TUI in specified directory
+./bin/run.sh /path/to/project -- bash # Shell in specified directory
+./bin/run.sh -- codewhale --help      # Pass arguments to codewhale CLI
+
+# Provider wrappers — same args as run.sh, auto-set via CODEWHALE_PROVIDER
+./scripts/deepseek                        # Launch with DeepSeek
+./scripts/deepseek /path/to/project       # DeepSeek in specific workspace
+./scripts/qwen                            # Launch with Qwen (DashScope)
+./scripts/qwen /path/to/project           # Qwen in specific workspace
 ```
 
 ## Architecture
 
 ```
-build.sh          → Builds the Docker image
-run.sh            → Orchestrates container launch
+bin/
+├── build.sh              → Builds the Docker image
+├── run.sh                → Orchestrates container launch
+└── consolidate-tools.sh  → Copies session tools into docker/tools.d/
+scripts/
+├── deepseek              → Wrapper: launch with DeepSeek provider
+└── qwen                  → Wrapper: launch with Qwen (DashScope) provider
 docker/
-├── Dockerfile    → Image definition (extends upstream, adds hardening)
-└── entrypoint.sh → Runtime hardening script (iptables, UID remap, permissions)
+├── Dockerfile            → Image definition (extends upstream, adds hardening)
+└── entrypoint.sh         → Runtime hardening script (iptables, UID remap, permissions)
 ```
 
 ### Security Hardening
@@ -72,10 +98,11 @@ docker/
 
 ## Customization
 
-- **Different image version**: edit the tag in `build.sh` and `run.sh`
+- **Different image version**: edit the tag in `bin/build.sh` and `bin/run.sh`
 - **Additional apt packages**: add them to the `RUN apt-get install` line in `docker/Dockerfile`
 - **Network rules**: modify the iptables blocks in `docker/entrypoint.sh`
 - **Entrypoint behavior**: the entrypoint routes to `codewhale-tui` by default; pass `bash` or `sh` as the first argument to override
+- **Provider switching**: use `/provider deepseek`, `/provider openai` (Qwen OpenAI-compatible), or `/provider anthropic` (Qwen Anthropic-compatible) inside a session. Provider credentials are passed through `run.sh` from `~/.config/codewhale/env`.
 
 ## License
 
