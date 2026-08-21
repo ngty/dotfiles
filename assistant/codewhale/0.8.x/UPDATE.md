@@ -30,6 +30,19 @@ edit ~/.config/codewhale/env        # CODEWHALE_VERSION="x.y.z"
 Do **not** edit the version in `Dockerfile`, `build.sh`, or `run.sh` — the env
 value is the only knob.
 
+## Trying a version without editing env
+
+Export `CODEWHALE_VERSION` in the shell to override the pinned value without
+touching `~/.config/codewhale/env` (the scripts honor the shell override):
+
+```sh
+export CODEWHALE_VERSION=0.9.7   # or: CODEWHALE_VERSION=0.9.7 ./bin/build.sh
+./bin/build.sh && ./bin/run.sh
+```
+
+The override is shell-only and never writes to the env file; run the normal
+build/run (no override) to return to the pinned version.
+
 ## Decision gates
 
 Apply all three before committing to a target version.

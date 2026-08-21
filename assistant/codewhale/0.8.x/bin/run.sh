@@ -7,6 +7,10 @@ set -euo pipefail
 
 # 1. Load Local Credentials
 ENV_FILE="${HOME}/.config/codewhale/env"
+# Capture a caller-provided version override (e.g. CODEWHALE_VERSION=0.9.7) before
+# sourcing the env file, which would otherwise overwrite it.
+VERSION_OVERRIDE="${CODEWHALE_VERSION:-}"
+
 if [[ -f "$ENV_FILE" ]]; then
     # shellcheck disable=SC1090
     source "$ENV_FILE"
@@ -23,10 +27,10 @@ fi
 # 2. Resolve project root (follows symlinks, e.g. ~/bin/deepseek → scripts/deepseek → bin/run.sh)
 PROJECT_ROOT="$(dirname "$(dirname "$(readlink -f "$0")")")"
 
-# 2b. Resolve the CodeWhale version from the env file (sourced in step 1).
-VERSION="${CODEWHALE_VERSION:-}"
+# 2b. Resolve the CodeWhale version — shell override wins over the env file value.
+VERSION="${VERSION_OVERRIDE:-${CODEWHALE_VERSION:-}}"
 if [[ -z "$VERSION" ]]; then
-    echo "❌ Error: CODEWHALE_VERSION is not set in ${ENV_FILE}" >&2
+    echo "❌ Error: CODEWHALE_VERSION is not set (set it in ${ENV_FILE} or export it)" >&2
     exit 1
 fi
 IMAGE="local/codewhale:v${VERSION}-hardened"

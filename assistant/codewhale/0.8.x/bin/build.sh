@@ -2,14 +2,18 @@
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
 ENV_FILE="${HOME}/.config/codewhale/env"
 
-# Load the env file to obtain the pinned CodeWhale version (single source of truth).
+# Capture a caller-provided version override (e.g. CODEWHALE_VERSION=0.9.7 ./bin/build.sh)
+# before sourcing the env file, which would otherwise overwrite it.
+VERSION_OVERRIDE="${CODEWHALE_VERSION:-}"
+
 if [ -f "$ENV_FILE" ]; then
     . "$ENV_FILE"
 fi
 
-VERSION="${CODEWHALE_VERSION:-}"
+# A shell-provided override wins over the env file's pinned value.
+VERSION="${VERSION_OVERRIDE:-${CODEWHALE_VERSION:-}}"
 if [ -z "$VERSION" ]; then
-    echo "Error: CODEWHALE_VERSION is not set in ${ENV_FILE}" >&2
+    echo "Error: CODEWHALE_VERSION is not set (set it in ${ENV_FILE} or export it)" >&2
     exit 1
 fi
 
