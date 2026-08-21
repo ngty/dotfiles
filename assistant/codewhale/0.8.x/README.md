@@ -115,6 +115,12 @@ docker/
 - **Entrypoint behavior**: the entrypoint routes to `codewhale-tui` by default; pass `bash` or `sh` as the first argument to override
 - **Provider switching**: use `/provider deepseek`, `/provider openai` (Qwen OpenAI-compatible), or `/provider anthropic` (Qwen Anthropic-compatible) inside a session. Provider credentials are passed through `run.sh` from `~/.config/codewhale/env`.
 
+## Upgrading
+
+To move to a newer CodeWhale version, follow [UPDATE.md](UPDATE.md) — the full
+playbook covering the vulnerability and 7-day age gates, the env-version change,
+rebuild, smoke-test, and rollback steps.
+
 ## License
 
 No license specified. Review upstream [CodeWhale](https://github.com/hmbown/codewhale) licensing before redistribution.

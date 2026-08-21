@@ -24,6 +24,7 @@ This is a hardened Docker workspace for running AI coding agents inside a securi
 | `docker/entrypoint.sh` | Runtime hardening — iptables blocks, UID remap, permission fixes, command routing |
 | `.gitignore` | Ignores `.codewhale/` state directory |
 | `env.sample` | Environment template — copy to `~/.config/codewhale/env`; pins `CODEWHALE_VERSION` and API keys |
+| `UPDATE.md` | Upgrade playbook — version gates, rebuild/smoke-test, rollback; follow before bumping `CODEWHALE_VERSION` |
 
 ## Build Commands
 
@@ -89,4 +90,5 @@ When editing files in this project, observe the following rules:
 - **`docker/entrypoint.sh`**: this is a POSIX `#!/bin/sh` script, not bash. Do not use bashisms (`[[`, `==`, arrays, `source`, etc.).
 - **`bin/run.sh`**: this is bash with `set -euo pipefail`. The `TARGET_DIR` is derived via `pwd -P` (physical path, no symlinks) — do not replace with `$(pwd)`.
 - **`bin/build.sh`**: intentionally nukes the old volume and image before rebuilding. If you need to preserve state between builds, modify this behavior with user approval.
+- **`UPDATE.md`**: the version-upgrade playbook. When bumping `CODEWHALE_VERSION`, follow it (vulnerability + 7-day age gates, env edit, rebuild, smoke-test, rollback) instead of making ad-hoc version edits.
 - **`scripts/deepseek` / `scripts/qwen`**: thin wrappers around `bin/run.sh` that set `CODEWHALE_PROVIDER` to `deepseek` or `openai` and then exec `bin/run.sh`. They accept the same arguments as `bin/run.sh`. `bin/run.sh` forwards `CODEWHALE_PROVIDER` into the container via `docker run -e`. Keep them minimal.
