@@ -1,12 +1,23 @@
 # CodeWhale Hardened Workspace
 
-Hardened Docker workspace for [CodeWhale](https://github.com/hmbown/codewhale) v0.8.66 — a containerized AI coding agent with network isolation, user remapping, and terminal TUI execution.
+Hardened Docker workspace for [CodeWhale](https://github.com/hmbown/codewhale) — a containerized AI coding agent with network isolation, user remapping, and terminal TUI execution. The CodeWhale version is pinned via `CODEWHALE_VERSION` in `~/.config/codewhale/env`.
 
 ## Prerequisites
 
 - Docker (with BuildKit support)
-- API credentials in `~/.config/codewhale/env`:
+- A `~/.config/codewhale/env` file with API credentials and the pinned CodeWhale version. Start from the template:
+
   ```sh
+  mkdir -p ~/.config/codewhale
+  cp env.sample ~/.config/codewhale/env
+  ```
+
+  Then edit `~/.config/codewhale/env` to fill in real values. The template:
+
+  ```sh
+  # CodeWhale version to build and run — single source of truth
+  export CODEWHALE_VERSION="0.8.66"
+
   # DeepSeek
   export DEEPSEEK_API_KEY="sk-..."
   # export DEEPSEEK_OPENAI_URL=...       # (builtin)
@@ -43,13 +54,13 @@ Hardened Docker workspace for [CodeWhale](https://github.com/hmbown/codewhale) v
 ./bin/build.sh
 ```
 
-The image is tagged `local/codewhale:v0.8.66-hardened` and extends `ghcr.io/hmbown/codewhale:v0.8.66`.
+The image is tagged `local/codewhale:v${CODEWHALE_VERSION}-hardened` and extends `ghcr.io/hmbown/codewhale:v${CODEWHALE_VERSION}` (version read from `~/.config/codewhale/env`).
 
 ## Run
 
 `bin/run.sh` handles the full lifecycle:
 
-1. Loads API credentials from `~/.config/codewhale/env`
+1. Loads API credentials and the pinned version from `~/.config/codewhale/env`
 2. Parses the workspace path and container command (split on `--`)
 3. Creates a persistent volume for CodeWhale state (`codewhale-home`)
 4. Launches the container with network admin capabilities and workspace mount
@@ -98,7 +109,7 @@ docker/
 
 ## Customization
 
-- **Different image version**: edit the tag in `bin/build.sh` and `bin/run.sh`
+- **Different image version**: set `CODEWHALE_VERSION` in `~/.config/codewhale/env`, then rebuild with `./bin/build.sh`
 - **Additional apt packages**: add them to the `RUN apt-get install` line in `docker/Dockerfile`
 - **Network rules**: modify the iptables blocks in `docker/entrypoint.sh`
 - **Entrypoint behavior**: the entrypoint routes to `codewhale-tui` by default; pass `bash` or `sh` as the first argument to override

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# CodeWhale (v0.8.66) Consolidated Hardened Workspace Runner
+# CodeWhale Consolidated Hardened Workspace Runner (version from ~/.config/codewhale/env)
 # Loads environment keys, mounts physical PWD, and applies network drop logic.
 # ==============================================================================
 set -euo pipefail
@@ -22,6 +22,14 @@ fi
 
 # 2. Resolve project root (follows symlinks, e.g. ~/bin/deepseek → scripts/deepseek → bin/run.sh)
 PROJECT_ROOT="$(dirname "$(dirname "$(readlink -f "$0")")")"
+
+# 2b. Resolve the CodeWhale version from the env file (sourced in step 1).
+VERSION="${CODEWHALE_VERSION:-}"
+if [[ -z "$VERSION" ]]; then
+    echo "❌ Error: CODEWHALE_VERSION is not set in ${ENV_FILE}" >&2
+    exit 1
+fi
+IMAGE="local/codewhale:v${VERSION}-hardened"
 
 # 2a. Create per-session tools tracking directory (tools files created on-demand by the agent)
 SESSION_DIR="session-$(date +%Y%m%d-%H%M%S)-$$"
@@ -95,4 +103,4 @@ docker run --rm -it \
   -e CODEWHALE_TOOLS_DIR="/tmp/${SESSION_DIR}" \
   -v "${PROJECT_ROOT}/sessions/${SESSION_DIR}:/tmp/${SESSION_DIR}" \
   -w /workspace \
-  local/codewhale:v0.8.66-hardened "${cmd_args[@]}"
+  "${IMAGE}" "${cmd_args[@]}"
